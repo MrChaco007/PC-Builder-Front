@@ -20,26 +20,34 @@ function App() {
     gpu: { name: "", price: 0, spec: "" },
     memory: { name: "", price: 0, spec: "" }
   };
+  const [selectedBuild, setSelectedBuild] = React.useState(emptyBuild)
 
+  const handleCreate = () => {
+
+  }
+
+  const handleUpdate = () => {
+
+  }
 
   return (
     <div className="App">
       <Nav />
       <Switch>
         <Route exact path="/">
-          <ComputerBuilder />
+          <computerBuilder />
         </Route>
         <Route path="/builds">
-          <Builds/>
+          <builds/>
         </Route>
         <Route path="/team">
-          <TeamPage />
+          <teamPage />
         </Route>
         <Route
           exact
           path="/create"
           render={(rp) => (
-            <BuildForm
+            <buildForm
               {...rp}
               label="Add to Builds"
               build={emptyBuild}
@@ -51,7 +59,7 @@ function App() {
           exact
           path="/edit"
           render={(rp) => (
-            <BuildForm
+            <buildForm
               {...rp}
               label="Update"
               build={selectedBuild}
