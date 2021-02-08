@@ -1,11 +1,12 @@
 import "./App.css";
-import { Route, Switch } from "react-router-dom";
+import { Route, Switch, } from "react-router-dom";
 import Nav from "./components/Nav";
 import React from "react";
 import computerBuilder from "./pages/computerBuilder"
 import builds from "./pages/builds"
 import teamPage from "./pages/teamPage"
 import buildForm from "./pages/buildForm"
+
 
 
 function App() {

@@ -1,5 +1,5 @@
 .App {
-  text-align: center;
+  text-align: left;
 }
 
 .App-logo {
@@ -26,6 +26,33 @@
 
 .App-link {
   color: #61dafb;
+}
+
+div.menu-items {
+  padding: 5px;
+  text-decoration: none;
+  color: black;
+}
+
+div.nav {
+  display: flex;
+}
+
+.navbar{
+  color: black;
+}
+
+button.navbar-toggler {
+ display: block;
+}
+
+#basic-navbar-nav.navbar-collapse.collapse.show{
+  object-position: left;
+  
+}
+
+.navbar.navbar-expand-lg.navbar-light.bg-light {
+  display: flex;
 }
 
 @keyframes App-logo-spin {
