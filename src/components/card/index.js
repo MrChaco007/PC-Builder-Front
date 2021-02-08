@@ -3,7 +3,7 @@ import React from 'react'
 import Button from './Button'
 import './style.css'
 
-const BuildConfigCard = ({ build, buttons }) => {
+const BuildConfigCard = ({ build, buttons, handleDelete }) => {
 
     const [total, setTotal] = React.useState(0)
 
@@ -38,7 +38,12 @@ const BuildConfigCard = ({ build, buttons }) => {
         // props.buttons = ["create", "edit", "delete"]
         // maps over props.buttons and returns a component with the corresponding functionality 
         return buttons.map((button, index) => {
-            return <Button button={button} key={index}/>
+            switch(button) {
+                case "delete":
+                    return <Button button={button} key={index} handleDelete={handleDelete}/>
+                default:
+                    return <Button button={button} key={index} />
+            }
         })
     }
 
