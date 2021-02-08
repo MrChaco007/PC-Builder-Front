@@ -1,5 +1,5 @@
 .App {
-  text-align: center;
+  text-align: left;
 }
 
 .App-logo {
@@ -42,12 +42,17 @@ div.nav {
   color: black;
 }
 
-#basic-navbar-nav.navbar-collapse.collapse {
-  position: right;
+button.navbar-toggler {
+ display: block;
+}
+
+#basic-navbar-nav.navbar-collapse.collapse.show{
+  object-position: left;
+  
 }
 
 .navbar.navbar-expand-lg.navbar-light.bg-light {
-  
+  display: flex;
 }
 
 @keyframes App-logo-spin {
