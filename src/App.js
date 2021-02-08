@@ -1,11 +1,11 @@
 import "./App.css";
-import { Route, Switch, } from "react-router-dom";
+import { Route, Switch } from "react-router-dom";
 import Nav from "./components/Nav";
 import React from "react";
-import computerBuilder from "./pages/computerBuilder"
-import builds from "./pages/builds"
-import teamPage from "./pages/teamPage"
-import buildForm from "./pages/buildForm"
+import ComputerBuilder from "./pages/computerBuilder"
+import Builds from "./pages/builds"
+import TeamPage from "./pages/teamPage"
+import BuildForm from "./pages/buildForm"
 
 
 
@@ -36,19 +36,19 @@ function App() {
       <Nav />
       <Switch>
         <Route exact path="/">
-          <computerBuilder />
+          <ComputerBuilder />
         </Route>
         <Route path="/builds">
-          <builds/>
+          <Builds/>
         </Route>
         <Route path="/team">
-          <teamPage />
+          <TeamPage />
         </Route>
         <Route
           exact
           path="/create"
           render={(rp) => (
-            <buildForm
+            <BuildForm
               {...rp}
               label="Add to Builds"
               build={emptyBuild}
@@ -60,7 +60,7 @@ function App() {
           exact
           path="/edit"
           render={(rp) => (
-            <buildForm
+            <BuildForm
               {...rp}
               label="Update"
               build={selectedBuild}
