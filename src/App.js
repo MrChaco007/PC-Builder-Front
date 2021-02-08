@@ -1,23 +1,65 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+import { Route, Switch } from "react-router-dom";
+import Nav from "./components/Nav";
+import React from "react";
+import ComputerBuilder from "./pages/computerBuilder"
+import Builds from "./pages/builds"
+import TeamPage from "./pages/TeamPage"
+import BuildForm from "./pages/buildForm"
+
 
 function App() {
+  const url = "https://pc-builder-back.herokuapp.com";
+  const [builds, setBuilds] = React.useState([])
+  const emptyBuild = {
+    name: "",
+    processor: { name: "", price: 0, spec: "" },
+    motherboard: { name: "", price: 0, spec: "" },
+    storage: { name: "", price: 0, spec: "" },
+    powerSupply: { name: "", price: 0, spec: "" },
+    gpu: { name: "", price: 0, spec: "" },
+    memory: { name: "", price: 0, spec: "" }
+  };
+
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn Reac
-        </a>
-      </header>
+      <Nav />
+      <Switch>
+        <Route exact path="/">
+          <ComputerBuilder />
+        </Route>
+        <Route path="/builds">
+          <Builds/>
+        </Route>
+        <Route path="/team">
+          <TeamPage />
+        </Route>
+        <Route
+          exact
+          path="/create"
+          render={(rp) => (
+            <BuildForm
+              {...rp}
+              label="Add to Builds"
+              build={emptyBuild}
+              handleSubmit={handleCreate}
+            />
+          )}
+        />
+        <Route
+          exact
+          path="/edit"
+          render={(rp) => (
+            <BuildForm
+              {...rp}
+              label="Update"
+              build={selectedBuild}
+              handleSubmit={handleUpdate}
+            />
+          )}
+        />
+      </Switch>
     </div>
   );
 }
