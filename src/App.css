@@ -28,6 +28,28 @@
   color: #61dafb;
 }
 
+div.menu-items {
+  padding: 5px;
+  text-decoration: none;
+  color: black;
+}
+
+div.nav {
+  display: flex;
+}
+
+.navbar{
+  color: black;
+}
+
+#basic-navbar-nav.navbar-collapse.collapse {
+  position: right;
+}
+
+.navbar.navbar-expand-lg.navbar-light.bg-light {
+  
+}
+
 @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);
