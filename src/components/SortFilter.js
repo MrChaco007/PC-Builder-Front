@@ -1,13 +1,10 @@
 import React from "react"
 import BuildConfigCard from "./card/index"
+import gpus from "../data/gpus"
 
 const SortFilter = (props) => {
-    const storageData = [
-    {name: "AMD 500GB", 
-price: 800, spec: "500 GB"},
-{name: "AMD 400GB", price: 900, spec: "400 GB"}]
+
 const [showStatus, setShowStatus] = React.useState(false)
-const [filteredArr, setFilteredArr] = React.useState(storageData)
 const [checkStatus, setCheckStatus] = React.useState(false)
 const [checkValue, setCheckValue] = React.useState("")
 
@@ -22,30 +19,32 @@ if (checkStatus === false) {
 }
 
 const sortHigh = (event) => {
-  let newArr = [...filteredArr];
+  let newArr = [...props.filteredArr];
     newArr.sort(
       (a, b) => parseFloat(b.price) - parseFloat(a.price)
     );
-    setFilteredArr(newArr);
+    props.setFilteredArr(newArr);
   };
 
 const sortLow = (event) => {
-  let newArr = [...filteredArr];
+  let newArr = [...props.filteredArr];
     newArr.sort(
       (a, b) => parseFloat(a.price) - parseFloat(b.price)
     );
-    setFilteredArr(newArr);
+    props.setFilteredArr(newArr);
   };
 
 
 const dropdown = () => {
     return (
       <form>
-        <span>Storage: AMD 500GB</span>
-        <input onChange={handleFilter} type="checkbox" value="AMD 500GB" />
-        <span>AMD 400GB</span>
-        <input onChange={handleFilter} type="checkbox" value="AMD 400GB" />
-        <br />
+        {gpus.map((gpu)=>{
+          return(<article>
+     <span>{gpu.name}</span>
+        <input onChange={handleFilter} type="checkbox" value={gpu.name} />
+        </article> 
+          )
+        } )}
         <span>Price: Low to High</span>
         <input onChange={sortLow} type="checkbox"/>
         <span>Price: High to Low</span>
@@ -62,13 +61,13 @@ const dropdown = () => {
 const handleClick = () => {
     showStatus? setShowStatus(false):setShowStatus(true)
     setCheckStatus(false)
-    setFilteredArr(storageData);
+    props.setFilteredArr(props.builds);
 }
 
 const handleStorage = (event) => {
 event.preventDefault()
-const newArr = filteredArr.filter((storage) =>  storage.name === checkValue)
- checkStatus? setFilteredArr(newArr) : setFilteredArr(filteredArr)
+const newArr = props.filteredArr.filter((build) =>  build.gpu.name === checkValue)
+ checkStatus? props.setFilteredArr(newArr) : props.setFilteredArr(props.filteredArr)
  setShowStatus(false)
 }
 
@@ -76,17 +75,7 @@ const newArr = filteredArr.filter((storage) =>  storage.name === checkValue)
 return (
     <div className="sortFilter">
 <button onClick={handleClick}>Filter</button>
-{showStatus? dropdown(): filteredArr.map((data, index) => {
-            const {name, price, spec} = data;
-            return (
-              <li
-                key={index}
-                className="storages"
-              >
-                <b>{name}</b>
-              </li>
-            );
-          })}
+{showStatus? dropdown(): null}
     </div>
 )
 
