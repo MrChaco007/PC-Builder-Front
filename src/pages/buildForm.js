@@ -56,42 +56,42 @@ const BuildForm = (props) => {
       <form onSubmit={handleSubmit}>
         <label>
           GPU:
-          <select value={formData.gpu.name} onChange={handleChange} name="gpu" price="price" spec="spec">
+          <select value={formData.gpu.value} onChange={handleChange} name="gpu" price="price" spec="spec">
             {renderOptions(Gpus)}
           </select>  
         </label>
         <br />
         <label>
           Memory:
-          <select value={formData.memory.name} onChange={handleChange} name="memory" price="price" spec="spec">
+          <select value={formData.memory.value} onChange={handleChange} name="memory" price="price" spec="spec">
             {renderOptions(Memorys)}
           </select>
         </label>
         <br />
         <label>
           Motherboard:
-          <select value={formData.motherboard.name} onChange={handleChange} name="motherboard" price="price" spec="spec">
+          <select value={formData.motherboard.value} onChange={handleChange} name="motherboard" price="price" spec="spec">
             {renderOptions(Motherboards)}
           </select>
         </label>
         <br />
         <label>
           Power Supply:
-          <select value={formData.powerSupply.name} onChange={handleChange} name="powerSupply" price="price" spec="spec">
+          <select value={formData.powerSupply.value} onChange={handleChange} name="powerSupply" price="price" spec="spec">
             {renderOptions(PowerSupplys)}
           </select>
         </label>
         <br />
         <label>
           Processor:
-          <select value={formData.processor.name} onChange={handleChange} name="powerSupply" price="price" spec="spec">
+          <select value={formData.processor.value} onChange={handleChange} name="processor" price="price" spec="spec">
             {renderOptions(Processors)}
           </select>
         </label>
         <br />
         <label>
           Storage:
-          <select value={formData.storage.name} onChange={handleChange} name="storage" price="price" spec="spec">
+          <select value={formData.storage.value} onChange={handleChange} name="storage" price="price" spec="spec">
             {renderOptions(Storages)}
           </select>
         </label>
