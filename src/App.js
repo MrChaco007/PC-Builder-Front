@@ -30,7 +30,6 @@ function App() {
       .then((data) => {
         setBuilds(data);
       });
-      console.log(builds)
   };
 
   const handleCreate = (newBuild) => {
@@ -76,7 +75,7 @@ function App() {
           <ComputerBuilder build={build}/>
         </Route>
         <Route path="/builds">
-          <Builds selectBuild={selectBuild} handleDelete={handleDelete} builds={builds} />
+          <Builds selectBuild={selectBuild} handleDelete={handleDelete} builds={builds} getBuilds={getBuilds} />
         </Route>
         <Route path="/team">
           <TeamPage />

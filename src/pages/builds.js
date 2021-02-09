@@ -2,11 +2,12 @@ import React from "react";
 import SortFilter from "../components/SortFilter"
 import Card from "../components/card"
 const Builds = (props) => {
-const [filteredArr, setFilteredArr] = React.useState(props.builds);
-
-
-
-
+  const [filteredArr, setFilteredArr] = React.useState([]);
+  React.useEffect(() => {
+    if (props.builds) {
+      setFilteredArr(props.builds)
+    }
+  },[props.builds])
   return (
     <div>
       <SortFilter builds={props.builds} filteredArr={filteredArr} setFilteredArr={setFilteredArr}/>
@@ -16,5 +17,4 @@ return <Card key ={index} build={build} handleDelete={props.handleDelete} button
     </div>
   );
 };
-
 export default Builds;
