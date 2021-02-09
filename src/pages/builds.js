@@ -1,7 +1,7 @@
 import React from "react";
-
-const builds = () => {
-  return <></>;
+import SortFilter from "../components/SortFilter"
+const Builds = () => {
+  return <div><SortFilter/></div>;
 };
 
-export default builds;
+export default Builds;
