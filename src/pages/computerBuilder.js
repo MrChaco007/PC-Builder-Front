@@ -1,9 +1,5 @@
 import React from "react";
 
-<<<<<<< HEAD
-const ComputerBuilder = () => {
-  return <></>;
-=======
 import Card from '../components/card'
 
 const ComputerBuilder = () => {
@@ -24,7 +20,6 @@ const ComputerBuilder = () => {
       <Card build={build} buttons={["create"]}/>
     </div>
   );
->>>>>>> dev
 };
 
 export default ComputerBuilder;
