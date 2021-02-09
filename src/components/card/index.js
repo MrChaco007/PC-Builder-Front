@@ -10,13 +10,14 @@ const BuildConfigCard = ({ build, buttons, handleDelete }) => {
     // makes an array of the object properties
     // i.e ["name", "processor", "motherboard", ...]
     let specs = Object.keys(build)
-    // gets rid of "name" from "specs" array 
-    specs.splice(0, 1)
+    // gets rid of "name", "_v", and "_id" from "specs" array 
+    specs = specs.slice(2, specs.length - 1)
 
     React.useEffect(() => {
         const tabulateTotal = () => {
             let totalPrice = 0
             specs.forEach(spec => {
+                console.log(spec)
                 totalPrice = totalPrice + build[spec].price
             })
             setTotal(totalPrice)
