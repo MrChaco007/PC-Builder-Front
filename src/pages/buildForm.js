@@ -7,22 +7,14 @@ import Motherboards from "../data/motherboards"
 import Storages from "../data/storages"
 
 const BuildForm = (props) => {
-  const Build = {
-    name: "Awesome Build",
-    processor: { name: "AMD Ryzen 7 3700", price: 299, spec: "8 core" },
-    motherboard: { name: "ASRock x570m pro 4", price: 200, spec: "128GB Max RAM" },
-    storage: { name: "WD 1TB SSD", price: 100, spec: "1TB"},
-    powerSupply: { name: "EVGA 600", price: 60, spec: "600w"},
-    gpu: { name: "ASUS GeForce GTX1070ti", price: 450, spec: "8GB"},
-    memory: { name: "Crucial Ballistix 8GB x 2 RGB", price: 100, spec: "16GB"}
-  }
+
   //STATE FOR THE FORM
-  const [formData, setFormData] = React.useState(Build);
+  const [formData, setFormData] = React.useState(props.build);
   //FUNCTIONS
   const handleSubmit = (event) => {
     event.preventDefault();
     props.handleSubmit(formData);
-    props.history.push("/create");
+    props.history.push("/builds");
   };
 
   const handleChange = (event) => {
@@ -53,7 +45,6 @@ const BuildForm = (props) => {
 
   const renderOptions = (arr) => {
     return arr.map((item, index) => {
-      console.log(item)
       return (
         <option key={index} value={index}>{item.name}</option>
       )
