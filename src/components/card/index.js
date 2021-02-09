@@ -17,7 +17,6 @@ const BuildConfigCard = ({ build, buttons, handleDelete }) => {
         const tabulateTotal = () => {
             let totalPrice = 0
             specs.forEach(spec => {
-                console.log(spec)
                 totalPrice = totalPrice + build[spec].price
             })
             setTotal(totalPrice)
