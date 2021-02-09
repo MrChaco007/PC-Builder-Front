@@ -2,10 +2,10 @@ import "./App.css";
 import { Route, Switch } from "react-router-dom";
 import Nav from "./components/Nav";
 import React from "react";
-import ComputerBuilder from "./pages/ComputerBuilder"
-import Builds from "./pages/Builds"
-import TeamPage from "./pages/TeamPage"
-import BuildForm from "./pages/BuildForm"
+import ComputerBuilder from "./pages/computerBuilder"
+import Builds from "./pages/builds"
+import TeamPage from "./pages/teamPage"
+import BuildForm from "./pages/buildForm"
 
 
 function App() {
