@@ -1,5 +1,5 @@
 import React from "react"
-import BuildConfigCard from "./BuildConfigCard"
+// import BuildConfigCard from "./BuildConfigCard"
 
 const SortFilter = (props) => {
     const storageData = [
