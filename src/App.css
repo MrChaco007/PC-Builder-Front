@@ -71,3 +71,27 @@ button.navbar-toggler {
     transform: rotate(360deg);
   }
 }
+
+#briefcase{
+  margin-left: 10px; 
+  margin-right: 10px; 
+}
+
+.icon {
+  margin-bottom: 20px; 
+}
+
+.icon-link {
+  color: #23272B;
+}
+
+.team{ 
+  display: flex; 
+  justify-content: space-evenly;
+  flex-wrap: wrap; 
+}
+
+.card{
+  min-width: 200px; 
+  margin: 10px; 
+}
