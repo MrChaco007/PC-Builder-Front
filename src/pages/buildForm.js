@@ -93,7 +93,7 @@ const BuildForm = (props) => {
         <br />
         <label>
           Processor:
-          <select value={formData.processor.name} onChange={handleChange} name="powerSupply" price="price" spec="spec">
+          <select value={formData.processor.name} onChange={handleChange} name="processor" price="price" spec="spec">
             {renderOptions(Processors)}
           </select>
         </label>
