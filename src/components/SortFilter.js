@@ -3,7 +3,7 @@ import BuildConfigCard from "./card/index"
 import gpus from "../data/gpus"
 
 const SortFilter = (props) => {
-
+console.log("props1.builds", props.builds)
 const [showStatus, setShowStatus] = React.useState(false)
 const [checkStatus, setCheckStatus] = React.useState(false)
 const [checkValue, setCheckValue] = React.useState("")
@@ -50,7 +50,7 @@ const dropdown = () => {
         <span>Price: High to Low</span>
         <input onChange={sortHigh} type="checkbox" />
         <br />
-        <button onClick={handleStorage} type="submit">
+        <button onClick={handleGo} type="submit">
           GO
         </button>
       </form>
@@ -64,10 +64,10 @@ const handleClick = () => {
     props.setFilteredArr(props.builds);
 }
 
-const handleStorage = (event) => {
+const handleGo = (event) => {
 event.preventDefault()
 const newArr = props.filteredArr.filter((build) =>  build.gpu.name === checkValue)
- checkStatus? props.setFilteredArr(newArr) : props.setFilteredArr(props.filteredArr)
+ if (checkStatus) {props.setFilteredArr(newArr)} 
  setShowStatus(false)
 }
 
