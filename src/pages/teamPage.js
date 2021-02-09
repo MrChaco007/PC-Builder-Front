@@ -1,6 +1,6 @@
 import React from "react";
 
-const teamPage = () => {
+const TeamPage = () => {
 
 return (
     <>
@@ -9,4 +9,4 @@ return (
 
 }
 
-export default teamPage
+export default TeamPage

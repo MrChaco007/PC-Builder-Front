@@ -1,7 +1,7 @@
 import React from "react";
 
-const buildForm = () => {
+const BuildForm = () => {
   return <></>;
 };
 
-export default buildForm;
+export default BuildForm;
