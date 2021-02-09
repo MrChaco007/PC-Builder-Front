@@ -60,14 +60,14 @@ const TeamPage = () => {
       <Card className="card" style={{ width: "16rem", textAlign: "center" }}>
         <Card.Img
           variant="top"
-          src="https://res.cloudinary.com/dvnl2s9um/image/upload/v1608745815/15672988_10211212030552102_7722795121537872527_n_pkzqgc.jpg"
+          src="https://res.cloudinary.com/dfltkqotn/image/upload/c_scale,h_264/v1612906104/IMG_6547_lvytbc_a8stcg.jpg"
         />
         <Card.Body>
-          <Card.Title style={{ fontSize: "28px" }}>Alex Chaconas</Card.Title>
-          <a className="icon-link" href="https://github.com/MrChaco007">
+          <Card.Title style={{ fontSize: "28px" }}>Adrian Mendez</Card.Title>
+          <a className="icon-link" href="https://github.com/adrianmendez03">
             <FontAwesomeIcon className="icon" icon={faGithubSquare} size="2x" />
           </a>
-          <a className="icon-link" href="https://mrchaco007.github.io/">
+          <a className="icon-link" href="https://github.com/adrianmendez03">
             <FontAwesomeIcon
               className="icon"
               id="briefcase"
@@ -77,14 +77,14 @@ const TeamPage = () => {
           </a>
           <a
             className="icon-link"
-            href="https://www.linkedin.com/in/alex-chaconas/"
+            href="https://www.linkedin.com/in/adrianmendez03"
           >
             <FontAwesomeIcon className="icon" icon={faLinkedin} size="2x" />
           </a>
           <Accordion defaultActiveKey="1">
             <Card>
               <Accordion.Toggle as={Button} variant="dark" eventKey="0">
-                Learn more about Alex
+                Learn more about Adrian
               </Accordion.Toggle>
               <Accordion.Collapse eventKey="0">
                 <Card.Body style={{ fontSize: "16px" }}>
@@ -109,14 +109,14 @@ const TeamPage = () => {
       <Card className="card" style={{ width: "16rem", textAlign: "center" }}>
         <Card.Img
           variant="top"
-          src="https://res.cloudinary.com/dvnl2s9um/image/upload/v1608745815/15672988_10211212030552102_7722795121537872527_n_pkzqgc.jpg"
+          src="https://res.cloudinary.com/dfltkqotn/image/upload/v1612905073/1608763532612_z2rmzr.jpg"
         />
         <Card.Body>
-          <Card.Title style={{ fontSize: "28px" }}>Alex Chaconas</Card.Title>
-          <a className="icon-link" href="https://github.com/MrChaco007">
+          <Card.Title style={{ fontSize: "28px" }}>Jorge Soto</Card.Title>
+          <a className="icon-link" href="https://github.com/acurunner79">
             <FontAwesomeIcon className="icon" icon={faGithubSquare} size="2x" />
           </a>
-          <a className="icon-link" href="https://mrchaco007.github.io/">
+          <a className="icon-link" href="https://git.generalassemb.ly/acurunner79">
             <FontAwesomeIcon
               className="icon"
               id="briefcase"
@@ -126,29 +126,21 @@ const TeamPage = () => {
           </a>
           <a
             className="icon-link"
-            href="https://www.linkedin.com/in/alex-chaconas/"
+            href="https://www.linkedin.com/in/jorgelsotojr"
           >
             <FontAwesomeIcon className="icon" icon={faLinkedin} size="2x" />
           </a>
           <Accordion defaultActiveKey="1">
             <Card>
               <Accordion.Toggle as={Button} variant="dark" eventKey="0">
-                Learn more about Alex
+                Learn more about Jorge
               </Accordion.Toggle>
               <Accordion.Collapse eventKey="0">
                 <Card.Body style={{ fontSize: "16px" }}>
-                  Alex is a software developer with 4 years of marketing and
-                  communications experience. He combines his rapidly evolving
-                  coding potential with his exceptional soft skills to not only
-                  find solutions to technical problems but also ensure
-                  interpersonal conflict does not get in the way.
-                  <br />
-                  <br />
-                  He is motivated by his appetite to get better at what he does
-                  and to become a reliable asset for his team. My marketing
-                  experience enables him to see how even the most robust
-                  back-end logic is futile without an intuitive and appealing
-                  front-end design.
+                Aspiring Full-stack web developer and professional dancer who is always looking for ways to level up in all aspects. 
+                <br />
+                <br />
+                Passionate about applying structure in my everyday life, making me more efficient. Eager to create functional products shaped around consumer wants and needs influenced by industry-based feedback and research.
                 </Card.Body>
               </Accordion.Collapse>
             </Card>
@@ -158,14 +150,14 @@ const TeamPage = () => {
       <Card className="card" style={{ width: "16rem", textAlign: "center" }}>
         <Card.Img
           variant="top"
-          src="https://res.cloudinary.com/dvnl2s9um/image/upload/v1608745815/15672988_10211212030552102_7722795121537872527_n_pkzqgc.jpg"
+          src="https://avatars.githubusercontent.com/u/75413323?s=400&u=9beccb5dd76ccdf3c7aaba2d1f120856285b26a4&v=4"
         />
         <Card.Body>
-          <Card.Title style={{ fontSize: "28px" }}>Alex Chaconas</Card.Title>
-          <a className="icon-link" href="https://github.com/MrChaco007">
+          <Card.Title style={{ fontSize: "28px" }}>Andrew Arias</Card.Title>
+          <a className="icon-link" href="https://github.com/lta4">
             <FontAwesomeIcon className="icon" icon={faGithubSquare} size="2x" />
           </a>
-          <a className="icon-link" href="https://mrchaco007.github.io/">
+          <a className="icon-link" href="https://git.generalassemb.ly/lta4">
             <FontAwesomeIcon
               className="icon"
               id="briefcase"
@@ -175,14 +167,14 @@ const TeamPage = () => {
           </a>
           <a
             className="icon-link"
-            href="https://www.linkedin.com/in/alex-chaconas/"
+            href="https://www.linkedin.com/in/andrewarias4"
           >
             <FontAwesomeIcon className="icon" icon={faLinkedin} size="2x" />
           </a>
           <Accordion defaultActiveKey="1">
             <Card>
               <Accordion.Toggle as={Button} variant="dark" eventKey="0">
-                Learn more about Alex
+                Learn more about Andrew
               </Accordion.Toggle>
               <Accordion.Collapse eventKey="0">
                 <Card.Body style={{ fontSize: "16px" }}>
