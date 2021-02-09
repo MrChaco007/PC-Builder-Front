@@ -67,7 +67,7 @@ const TeamPage = () => {
           <a className="icon-link" href="https://github.com/adrianmendez03">
             <FontAwesomeIcon className="icon" icon={faGithubSquare} size="2x" />
           </a>
-          <a className="icon-link" href="https://github.com/adrianmendez03">
+          <a className="icon-link" href="https://adrianmendez03.github.io/">
             <FontAwesomeIcon
               className="icon"
               id="briefcase"
@@ -116,7 +116,7 @@ const TeamPage = () => {
           <a className="icon-link" href="https://github.com/acurunner79">
             <FontAwesomeIcon className="icon" icon={faGithubSquare} size="2x" />
           </a>
-          <a className="icon-link" href="https://git.generalassemb.ly/acurunner79">
+          <a className="icon-link" href="https://acurunner79.github.io/github.io/">
             <FontAwesomeIcon
               className="icon"
               id="briefcase"
@@ -157,7 +157,7 @@ const TeamPage = () => {
           <a className="icon-link" href="https://github.com/lta4">
             <FontAwesomeIcon className="icon" icon={faGithubSquare} size="2x" />
           </a>
-          <a className="icon-link" href="https://git.generalassemb.ly/lta4">
+          <a className="icon-link" href="https://andrewarias-portfolio.netlify.app">
             <FontAwesomeIcon
               className="icon"
               id="briefcase"
