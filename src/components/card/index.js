@@ -40,7 +40,7 @@ const BuildConfigCard = ({ build, buttons, handleDelete }) => {
         return buttons.map((button, index) => {
             switch(button) {
                 case "delete":
-                    return <Button button={button} key={index} handleDelete={handleDelete}/>
+                    return <Button button={button} key={index} build={build} handleDelete={handleDelete}/>
                 default:
                     return <Button button={button} key={index} />
             }
