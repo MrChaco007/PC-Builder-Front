@@ -1,0 +1,29 @@
+.build-container {
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+}
+
+.name {
+    font-weight: bold;
+}
+
+.specs {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    list-style: none;
+}
+
+.spec {
+    width: 120px;
+    margin: 5px auto;
+}
+
+.price {
+    text-align: right;
+}
+
+.button {
+    margin: 0 12px;
+}
