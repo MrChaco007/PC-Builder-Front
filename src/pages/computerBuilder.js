@@ -1,7 +1,7 @@
 import React from "react";
 
-const computerBuilder = () => {
+const ComputerBuilder = () => {
   return <></>;
 };
 
-export default computerBuilder;
+export default ComputerBuilder;
