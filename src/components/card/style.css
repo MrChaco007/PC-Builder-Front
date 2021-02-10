@@ -4,6 +4,12 @@
     padding: 10px;
 }
 
+.header {
+    text-transform: uppercase;
+    font-weight: bold;
+    font-size: 10px;
+}
+
 .name {
     font-weight: bold;
 }
