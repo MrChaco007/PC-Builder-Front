@@ -32,7 +32,9 @@ function App() {
   };
 
   const handleCreate = (newBuild) => {
-    console.log("mewBuild", newBuild)
+    delete newBuild["_id"]
+    delete newBuild["_v"]
+    console.log("newBuild", newBuild)
     fetch(url + "/build", {
       method: "post",
       headers: { "Content-Type": "application/json" },
