@@ -5,24 +5,11 @@ import './style.css'
 
 const BuildConfigCard = ({ build, buttons, handleDelete }) => {
 
-    const [total, setTotal] = React.useState(0)
-
     // makes an array of the object properties
     // i.e ["name", "processor", "motherboard", ...]
     let specs = Object.keys(build)
     // gets rid of "name", "_v", and "_id" from "specs" array 
-    specs = specs.slice(2, specs.length - 1)
-
-    React.useEffect(() => {
-        const tabulateTotal = () => {
-            let totalPrice = 0
-            specs.forEach(spec => {
-                totalPrice = totalPrice + build[spec].price
-            })
-            setTotal(totalPrice)
-        }
-        tabulateTotal()
-    }, [total])
+    specs = specs.slice(2, specs.length - 2)
 
     // function to render specs
     const renderSpecs = () => {
@@ -66,7 +53,7 @@ const BuildConfigCard = ({ build, buttons, handleDelete }) => {
             <div className="build-container">
                 <div className="name">{build.name}</div>
                 <div className="specs">{renderSpecs()}</div>
-                <div className="price">{`$${total}`}</div>
+                <div className="price">{build.price}</div>
                 <div className="buttons-container">{renderButtons()}</div>
             </div>
         )
