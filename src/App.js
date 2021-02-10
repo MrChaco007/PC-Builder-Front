@@ -34,7 +34,6 @@ function App() {
   const handleCreate = (newBuild) => {
     delete newBuild["_id"]
     delete newBuild["_v"]
-    console.log("newBuild", newBuild)
     fetch(url + "/build", {
       method: "post",
       headers: { "Content-Type": "application/json" },
@@ -55,8 +54,6 @@ function App() {
   };
 
   const handleDelete = (build) => {
-    console.log("triggered")
-    console.log("build",build)
     fetch(url + "/build/" + build._id, { method: "delete" }).then(() => {
       getBuilds();
     });
