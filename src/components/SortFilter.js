@@ -10,7 +10,7 @@ import storages from "../data/storages"
 const SortFilter = (props) => {
 const [showStatus, setShowStatus] = React.useState(false)
 const [checkStatus, setCheckStatus] = React.useState(false)
-const [checkValue, setCheckValue] = React.useState("")
+const [checkValue, setCheckValue] = React.useState([])
 const [gpuArrowStatus, setGpuArrowStatus] = React.useState(true)
 const [gpuStatus, setGpuStatus] = React.useState(false)
 const [memoryStatus, setMemoryStatus] = React.useState(false)
@@ -27,10 +27,12 @@ const [processorArrowStatus, setProcessorArrowStatus] = React.useState(
 );
 const [storageStatus, setStorageStatus] = React.useState(false);
 const [storageArrowStatus, setStorageArrowStatus] = React.useState(true);
+const [oneStatus, setOneStatus] = React.useState(false)
 const handleFilter = (event) => { 
 if (checkStatus === false) {
   setCheckStatus(true);
   setCheckValue(event.target.value);
+  console.log(checkValue)
 } else {
   setCheckStatus(false);
 }
@@ -105,26 +107,55 @@ const handleStorageShow = (event) => {
   storageStatus ? setStorageStatus(false) : setStorageStatus(true);
 };
 
+const handleOne = () => {
+ 
+
+ 
+}
 const gpuContent = () => {
-  return(
-gpus.map((gpu, index) => {
   return (
-    <article key={index}>
-      <input onChange={handleFilter} type="checkbox" value={gpu.name} />
-      &nbsp;
-      <span>{gpu.name}</span>
-    </article>
+    <>
+      <article>
+        <input onChange={handleOne} type="checkbox" value="1 GB" />
+        &nbsp;
+        <span>1 GB</span>
+      </article>
+      <article>
+        <input onChange={handleFilter} type="checkbox" value="2 GB" />
+        &nbsp;
+        <span>2 GB</span>
+      </article>
+      <article>
+        <input onChange={handleFilter} type="checkbox" value="4 GB" />
+        &nbsp;
+        <span>4 GB</span>
+      </article>
+      <article>
+        <input onChange={handleFilter} type="checkbox" value="8 GB" />
+        &nbsp;
+        <span>8 GB</span>
+      </article>
+      <article>
+        <input onChange={handleFilter} type="checkbox" value="16 GB" />
+        &nbsp;
+        <span>16 GB</span>
+        <article>
+          <input onChange={handleFilter} type="checkbox" value="24 GB" />
+          &nbsp;
+          <span>24 GB</span>
+        </article>
+      </article>
+    </>
   );
-}))
 }
 
 const memoryContent = () => {
 return (memorys.map((memory, index) => {
   return (
     <article key={index}>
-      <input onChange={handleFilter} type="checkbox" value={memory.name} />
+      <input onChange={handleFilter} type="checkbox" value={memory.specObj} />
       &nbsp;
-      <span>{memory.name}</span>
+      <span>{memory.spec}</span>
     </article>
   );
 }))
