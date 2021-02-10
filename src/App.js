@@ -11,17 +11,16 @@ function App() {
   const url = "https://pc-builder-back.herokuapp.com";
   const [builds, setBuilds] = React.useState([]);
   const build = {
+    _id: "",
     name: "Awesome Build",
-    processor: { name: "AMD Ryzen 7 3700", price: 299, spec: "8 core" },
-    motherboard: {
-      name: "ASRock x570m pro 4",
-      price: 200,
-      spec: "128GB Max RAM",
-    },
-    storage: { name: "WD 1TB SSD", price: 100, spec: "1TB" },
-    powerSupply: { name: "EVGA 600", price: 60, spec: "600w" },
+    processor: { name: "AMD Ryzen 7 3700X", price: 368, spec: "3.6GHz 8 core" },
+    motherboard: {name: "ASRock X570 TAICHI AM4 AMD", price: 300, spec: "128GB"},
+    storage: { name: "SAMSUNG 860 EVO Series 2.5 500GB SSD", price: 60, spec: "500GB" },
+    powerSupply: { name: "EVGA SuperNOVA 650", price: 122, spec: "650W" },
     gpu: { name: "ASUS GeForce GTX1070ti", price: 450, spec: "8GB" },
-    memory: { name: "Crucial Ballistix 8GB x 2 RGB", price: 100, spec: "16GB" },
+    memory: { name: "G.SKILL Ripjaws V Series 8GB x 2", price: 79, spec: "16GB" },
+    price: 1379,
+    _v: 0
   };
   const [selectedBuild, setSelectedBuild] = React.useState(build);
   const getBuilds = () => {
@@ -33,7 +32,8 @@ function App() {
   };
 
   const handleCreate = (newBuild) => {
-    console.log("mewBuild", newBuild)
+    delete newBuild["_id"]
+    delete newBuild["_v"]
     fetch(url + "/build", {
       method: "post",
       headers: { "Content-Type": "application/json" },
@@ -54,8 +54,6 @@ function App() {
   };
 
   const handleDelete = (build) => {
-    console.log("triggered")
-    console.log("build",build)
     fetch(url + "/build/" + build._id, { method: "delete" }).then(() => {
       getBuilds();
     });

@@ -66,14 +66,6 @@ button.navbar-toggler {
   display: flex;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
 
 #briefcase{
   margin-left: 10px; 
@@ -97,4 +89,95 @@ button.navbar-toggler {
 .card{
   min-width: 200px; 
   margin: 10px; 
+}
+
+.sort-filter{
+display: flex; 
+flex-wrap: wrap;
+justify-content:space-evenly;
+margin: 10px; 
+}
+
+.sort-filter-box{ 
+  border: 1px solid black; 
+  border-radius: 0.25rem; 
+  margin: 20px; 
+}
+
+.filter-box{
+  width: 325px;
+  margin: 10px; 
+  border: 1px black solid; 
+  padding: 10px; 
+}
+
+#go-button {
+width: 100px; 
+margin: 0 auto; 
+}
+
+#go-button-container{
+  margin: 10px auto; 
+  width: 200px; 
+  text-align: center;
+}
+/* ARROW CREDIT: Simon Breiter */
+.arrow {
+  width: 1.8rem;
+  height: 1.8rem;
+  display: inline-block;
+  position: relative;
+  margin: 0 1rem;
+  border: 1px solid rgb(66, 66, 66); 
+  border-radius: 0.25rem;
+  background-color: rgb(66, 66, 66);
+  box-shadow: 3px 3px 10px grey;
+}
+.arrow span {
+  top: 0.75rem;
+  position: absolute;
+  width: 1.05rem;
+  height: 0.2rem;
+  background-color: magenta;
+  display: inline-block;
+  transition: all 0.2s ease;
+}
+.arrow span:first-of-type {
+  left: 0;
+  transform: rotate(45deg);
+}
+.arrow span:last-of-type {
+  right: 0;
+  transform: rotate(-45deg);
+}
+.arrow.active span:first-of-type {
+  transform: rotate(-45deg);
+}
+.arrow.active span:last-of-type {
+  transform: rotate(45deg);
+}
+
+.filter-header{
+width: 250px; 
+ text-align:center; 
+ margin: 0px 20px; 
+}
+
+#sort-filter-component{
+  max-width: 1200px; 
+  margin: 0px auto; 
+}
+
+#filter-button{ 
+  width: 200px; 
+  margin: 20px 10px auto;
+}
+
+#filter-button-container{
+  max-width: 1200px; 
+  text-align: center;
+}
+
+.wrap span{
+  cursor: pointer;
 }
