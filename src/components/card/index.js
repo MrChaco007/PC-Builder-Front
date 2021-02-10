@@ -29,7 +29,20 @@ const BuildConfigCard = ({ build, buttons, handleDelete }) => {
         // maps over the properties and returns a li with the hardware name
         return specs.map((spec, index) => {
             const specObj = build[spec]
-            return <li className="spec" key={index}>{specObj.name}</li>
+            if (spec === "powerSupply") {
+                return (
+                    <li className="spec" key={index}>
+                        <div className="header">Power Supply</div>
+                        <div className="name">{specObj.name}</div>
+                    </li>
+                )
+            }
+            return (
+                <li className="spec" key={index}>
+                    <div className="header">{spec}</div>
+                    <div className="name">{specObj.name}</div>
+                </li>
+            )
         })
     }
 
