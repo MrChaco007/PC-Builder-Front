@@ -17,11 +17,21 @@ const BuildForm = (props) => {
     props.history.push("/builds");
   };
 
+  const createPrice = (oldPrice, newPrice) => {
+    let total = formData.price
+          total = (total - oldPrice) + newPrice
+      setFormData({...formData, price: total})
+      console.log('old price', oldPrice)
+      console.log('new price', newPrice)
+      console.log('total', total)
+  }
+
   const handleChange = (event) => {
     const value = event.target.value
     const name = event.target.name
     switch(name) {
       case "gpu":
+        createPrice(formData[name].price, Gpus[value].price)
         setFormData({...formData, [name]: Gpus[value]});
         break;
       case "memory":
@@ -62,6 +72,7 @@ const BuildForm = (props) => {
         className="form-control"
         name="name"
       />
+      <div>${formData.price}</div>
         <br />
         <label>
           GPU:
