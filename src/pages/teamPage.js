@@ -35,7 +35,7 @@ const TeamPage = () => {
           <Accordion defaultActiveKey="1">
             <Card>
               <Accordion.Toggle as={Button} variant="dark" eventKey="0">
-                Learn more about Alex
+                More about Alex
               </Accordion.Toggle>
               <Accordion.Collapse eventKey="0">
                 <Card.Body style={{ fontSize: "16px" }}>
@@ -60,7 +60,7 @@ const TeamPage = () => {
       <Card className="card" style={{ width: "16rem", textAlign: "center" }}>
         <Card.Img
           variant="top"
-          src="https://res.cloudinary.com/dfltkqotn/image/upload/c_scale,h_264/v1612906104/IMG_6547_lvytbc_a8stcg.jpg"
+          src="https://res.cloudinary.com/dfltkqotn/image/upload/c_fill,h_254,w_254/v1612906104/IMG_6547_lvytbc_a8stcg.jpg"
         />
         <Card.Body>
           <Card.Title style={{ fontSize: "28px" }}>Adrian Mendez</Card.Title>
@@ -84,7 +84,7 @@ const TeamPage = () => {
           <Accordion defaultActiveKey="1">
             <Card>
               <Accordion.Toggle as={Button} variant="dark" eventKey="0">
-                Learn more about Adrian
+                More about Adrian
               </Accordion.Toggle>
               <Accordion.Collapse eventKey="0">
                 <Card.Body style={{ fontSize: "16px" }}>
@@ -133,7 +133,7 @@ const TeamPage = () => {
           <Accordion defaultActiveKey="1">
             <Card>
               <Accordion.Toggle as={Button} variant="dark" eventKey="0">
-                Learn more about Jorge
+                More about Jorge
               </Accordion.Toggle>
               <Accordion.Collapse eventKey="0">
                 <Card.Body style={{ fontSize: "16px" }}>
@@ -174,22 +174,14 @@ const TeamPage = () => {
           <Accordion defaultActiveKey="1">
             <Card>
               <Accordion.Toggle as={Button} variant="dark" eventKey="0">
-                Learn more about Andrew
+                More about Andrew
               </Accordion.Toggle>
               <Accordion.Collapse eventKey="0">
                 <Card.Body style={{ fontSize: "16px" }}>
-                  Alex is a software developer with 4 years of marketing and
-                  communications experience. He combines his rapidly evolving
-                  coding potential with his exceptional soft skills to not only
-                  find solutions to technical problems but also ensure
-                  interpersonal conflict does not get in the way.
+                  Andrew is a Software Developer who was born and raised in Los Angeles. Now residing in San Diego, he has committed 6 years to the Financial Service Industry and another 6 too the Food and Beverage Hospitality Industry.
                   <br />
                   <br />
-                  He is motivated by his appetite to get better at what he does
-                  and to become a reliable asset for his team. My marketing
-                  experience enables him to see how even the most robust
-                  back-end logic is futile without an intuitive and appealing
-                  front-end design.
+                  With his newly aquired skills in HTML, CSS, JavaScript, and React, he strives to implement a soft, clean touch with great responsiveness and color pop. Simple and reliability are dynamics he enjoys, in order make a proper statement. It really is the simple things that stand out!
                 </Card.Body>
               </Accordion.Collapse>
             </Card>

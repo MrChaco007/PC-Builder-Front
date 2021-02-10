@@ -27,3 +27,17 @@
 .button {
     margin: 0 12px;
 }
+
+/*******TEAM PAGE*******/
+.team {
+    background: linear-gradient(to top,#000000, #434343);
+}
+
+.card {
+    background: linear-gradient(#d9a7c7, #fffcdc);   
+}
+
+a:hover.icon-link {
+    color: magenta;
+    transition: all 0.3s ease;
+}
