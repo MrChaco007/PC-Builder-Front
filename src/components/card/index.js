@@ -55,7 +55,7 @@ const BuildConfigCard = ({ build, buttons, handleDelete, selectBuild }) => {
             <div className="build-container">
                 <div className="name">{build.name}</div>
                 <div className="specs">{renderSpecs()}</div>
-                <div className="price">{build.price}</div>
+                <div className="price">${build.price}</div>
                 <div className="buttons-container">{renderButtons()}</div>
             </div>
         )
