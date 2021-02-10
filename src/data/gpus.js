@@ -1,7 +1,7 @@
 const Data = [
     {
         "name": "ASUS GeForce GTX1070ti", 
-        "price": 100, 
+        "price": 450, 
         "spec": "8GB"
     },
     {

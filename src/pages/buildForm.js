@@ -18,12 +18,11 @@ const BuildForm = (props) => {
   };
 
   const createPrice = (oldPrice, newPrice) => {
+    console.log('old price', oldPrice)
     let total = formData.price
-          total = (total - oldPrice) + newPrice
-      setFormData({...formData, price: total})
-      console.log('old price', oldPrice)
-      console.log('new price', newPrice)
-      console.log('total', total)
+    total = total - oldPrice
+    total = total + newPrice
+    return total;
   }
 
   const handleChange = (event) => {
@@ -31,23 +30,28 @@ const BuildForm = (props) => {
     const name = event.target.name
     switch(name) {
       case "gpu":
-        createPrice(formData[name].price, Gpus[value].price)
-        setFormData({...formData, [name]: Gpus[value]});
+        let val = createPrice(formData[name].price, Gpus[value].price)
+        setFormData({...formData, [name]: Gpus[value], "price": val });
         break;
       case "memory":
-        setFormData({...formData, [name]: Memorys[value]});
+        let val2 = createPrice(formData[name].price, Memorys[value].price)
+        setFormData({...formData, [name]: Memorys[value], "price": val2 });
         break;
       case "motherboard":
-        setFormData({...formData, [name]: Motherboards[value]});
+        let val3 = createPrice(formData[name].price, Motherboards[value].price)
+        setFormData({...formData, [name]: Motherboards[value], "price": val3 });
         break;
       case "powerSupply":
-        setFormData({...formData, [name]: PowerSupplys[value]});
+        let val4 = createPrice(formData[name].price, PowerSupplys[value].price)
+        setFormData({...formData, [name]: PowerSupplys[value], "price": val4 });
         break;
       case "processor":
-        setFormData({...formData, [name]: Processors[value]});
+        let val5 = createPrice(formData[name].price, Processors[value].price)
+        setFormData({...formData, [name]: Processors[value], "price": val5 });
         break;
       case "storage":
-        setFormData({...formData, [name]: Storages[value]});
+        let val6 = createPrice(formData[name].price, Storages[value].price)
+        setFormData({...formData, [name]: Storages[value], "price": val6 });
         break;
       default:
         setFormData({...formData, [name]: value})
@@ -62,8 +66,13 @@ const BuildForm = (props) => {
     })
   }
 
-  return (
-    <>
+  const loading = () => {
+    console.log('loading')
+    return <h2>loading</h2>
+  }
+  const loaded = () => {
+    console.log(formData.gpu.value)
+    return (
       <form onSubmit={handleSubmit}>
       <input
         value={formData.name}
@@ -118,8 +127,10 @@ const BuildForm = (props) => {
         <br />
         <input type="submit" value="Submit" />
       </form>
-    </>
-  );
+    )
+  }
+
+  return formData.gpu ? loaded() : loading();
 };
 
 
