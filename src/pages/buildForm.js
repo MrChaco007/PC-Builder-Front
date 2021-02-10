@@ -17,30 +17,41 @@ const BuildForm = (props) => {
     props.history.push("/builds");
   };
 
+  const createPrice = (oldPrice, newPrice) => {
+    let total = formData.price
+          total = (total - oldPrice) + newPrice
+      setFormData({...formData, price: total})
+      console.log('old price', oldPrice)
+      console.log('new price', newPrice)
+      console.log('total', total)
+  }
+
   const handleChange = (event) => {
     const value = event.target.value
     const name = event.target.name
     switch(name) {
       case "gpu":
-        setFormData({...formData, [name]: Gpus[value]})
-        break
+        createPrice(formData[name].price, Gpus[value].price)
+        setFormData({...formData, [name]: Gpus[value]});
+        break;
       case "memory":
-        setFormData({...formData, [name]: Memorys[value]})
-        break
+        setFormData({...formData, [name]: Memorys[value]});
+        break;
       case "motherboard":
-        setFormData({...formData, [name]: Motherboards[value]})
-        break
+        setFormData({...formData, [name]: Motherboards[value]});
+        break;
       case "powerSupply":
-        setFormData({...formData, [name]: PowerSupplys[value]})
-        break
+        setFormData({...formData, [name]: PowerSupplys[value]});
+        break;
       case "processor":
-        setFormData({...formData, [name]: Processors[value]})
-        break
+        setFormData({...formData, [name]: Processors[value]});
+        break;
       case "storage":
-        setFormData({...formData, [name]: Storages[value]})
-        break
+        setFormData({...formData, [name]: Storages[value]});
+        break;
       default:
-        break
+        setFormData({...formData, [name]: value})
+        break;
     }}
 
   const renderOptions = (arr) => {
@@ -54,6 +65,15 @@ const BuildForm = (props) => {
   return (
     <>
       <form onSubmit={handleSubmit}>
+      <input
+        value={formData.name}
+        onChange={handleChange}
+        type="text"
+        className="form-control"
+        name="name"
+      />
+      <div>${formData.price}</div>
+        <br />
         <label>
           GPU:
           <select value={formData.gpu.value} onChange={handleChange} name="gpu" price="price" spec="spec">
@@ -101,5 +121,6 @@ const BuildForm = (props) => {
     </>
   );
 };
+
 
 export default BuildForm;

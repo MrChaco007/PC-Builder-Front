@@ -12,6 +12,7 @@ function App() {
   const [builds, setBuilds] = React.useState([]);
   const build = {
     name: "Awesome Build",
+    price: 1209,
     processor: { name: "AMD Ryzen 7 3700", price: 299, spec: "8 core" },
     motherboard: {
       name: "ASRock x570m pro 4",
