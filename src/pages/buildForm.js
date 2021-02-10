@@ -10,6 +10,7 @@ const BuildForm = (props) => {
 
   //STATE FOR THE FORM
   const [formData, setFormData] = React.useState(props.build);
+  
   //FUNCTIONS
   const handleSubmit = (event) => {
     event.preventDefault();
@@ -84,42 +85,48 @@ const BuildForm = (props) => {
       <div>${formData.price}</div>
         <br />
         <label>
-          GPU:
+          GPU: {props.build["gpu"].name} ${props.build["gpu"].price}
+          <br />
           <select value={formData.gpu.value} onChange={handleChange} name="gpu" price="price" spec="spec">
             {renderOptions(Gpus)}
           </select>  
         </label>
         <br />
         <label>
-          Memory:
+          Memory: {props.build["memory"].name} ${props.build["memory"].price}
+          <br />
           <select value={formData.memory.value} onChange={handleChange} name="memory" price="price" spec="spec">
             {renderOptions(Memorys)}
           </select>
         </label>
         <br />
         <label>
-          Motherboard:
+          Motherboard: {props.build["motherboard"].name} ${props.build["motherboard"].price}
+          <br />
           <select value={formData.motherboard.value} onChange={handleChange} name="motherboard" price="price" spec="spec">
             {renderOptions(Motherboards)}
           </select>
         </label>
         <br />
         <label>
-          Power Supply:
+          Power Supply: {props.build["powerSupply"].name} ${props.build["powerSupply"].price}
+          <br />
           <select value={formData.powerSupply.value} onChange={handleChange} name="powerSupply" price="price" spec="spec">
             {renderOptions(PowerSupplys)}
           </select>
         </label>
         <br />
         <label>
-          Processor:
+          Processor: {props.build["processor"].name} ${props.build["processor"].price}
+          <br />
           <select value={formData.processor.value} onChange={handleChange} name="processor" price="price" spec="spec">
             {renderOptions(Processors)}
           </select>
         </label>
         <br />
         <label>
-          Storage:
+          Storage: {props.build["storage"].name} ${props.build["storage"].price}
+          <br />
           <select value={formData.storage.value} onChange={handleChange} name="storage" price="price" spec="spec">
             {renderOptions(Storages)}
           </select>
