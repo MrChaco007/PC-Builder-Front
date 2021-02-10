@@ -34,14 +34,6 @@ button.navbar-toggler {
   display: flex;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
 
 #briefcase{
   margin-left: 10px; 
@@ -71,9 +63,13 @@ button.navbar-toggler {
 display: flex; 
 flex-wrap: wrap;
 justify-content:space-evenly;
-border: 1px solid black; 
 margin: 10px; 
-border-radius: 0.25rem; 
+}
+
+.sort-filter-box{ 
+  border: 1px solid black; 
+  border-radius: 0.25rem; 
+  margin: 20px; 
 }
 
 .filter-box{
@@ -83,10 +79,15 @@ border-radius: 0.25rem;
   padding: 10px; 
 }
 
+#go-button {
+width: 100px; 
+margin: 0 auto; 
+}
 
-#go-button{
-  margin: 0 auto; 
-  width: 100px; 
+#go-button-container{
+  margin: 10px auto; 
+  width: 200px; 
+  text-align: center;
 }
 /* ARROW CREDIT: Simon Breiter */
 .arrow {
@@ -128,4 +129,23 @@ border-radius: 0.25rem;
 width: 250px; 
  text-align:center; 
  margin: 0px 20px; 
+}
+
+#sort-filter-component{
+  max-width: 1200px; 
+  margin: 0px auto; 
+}
+
+#filter-button{ 
+  width: 200px; 
+  margin: 10px auto;
+}
+
+#filter-button-container{
+  max-width: 1200px; 
+  text-align: center;
+}
+
+.wrap span{
+  cursor: pointer;
 }

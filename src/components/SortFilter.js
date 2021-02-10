@@ -25,6 +25,8 @@ const [processorStatus, setProcessorStatus] = React.useState(false);
 const [processorArrowStatus, setProcessorArrowStatus] = React.useState(
   true
 );
+const [storageStatus, setStorageStatus] = React.useState(false);
+const [storageArrowStatus, setStorageArrowStatus] = React.useState(true);
 const handleFilter = (event) => { 
 if (checkStatus === false) {
   setCheckStatus(true);
@@ -93,11 +95,21 @@ const handleProcessorShow = (event) => {
   processorStatus ? setProcessorStatus(false) : setProcessorStatus(true);
 };
 
+const handleStorageArrow = (event) => {
+  storageArrowStatus
+    ? setStorageArrowStatus(false)
+    : setStorageArrowStatus(true);
+};
+
+const handleStorageShow = (event) => {
+  storageStatus ? setStorageStatus(false) : setStorageStatus(true);
+};
+
 const gpuContent = () => {
   return(
-gpus.map((gpu) => {
+gpus.map((gpu, index) => {
   return (
-    <article>
+    <article key={index}>
       <input onChange={handleFilter} type="checkbox" value={gpu.name} />
       &nbsp;
       <span>{gpu.name}</span>
@@ -107,9 +119,9 @@ gpus.map((gpu) => {
 }
 
 const memoryContent = () => {
-return (memorys.map((memory) => {
+return (memorys.map((memory, index) => {
   return (
-    <article>
+    <article key={index}>
       <input onChange={handleFilter} type="checkbox" value={memory.name} />
       &nbsp;
       <span>{memory.name}</span>
@@ -119,9 +131,9 @@ return (memorys.map((memory) => {
 }
 
 const motherboardContent = () => {
-  return motherboards.map((motherboard) => {
+  return motherboards.map((motherboard, index) => {
     return (
-      <article>
+      <article key={index}>
         <input
           onChange={handleFilter}
           type="checkbox"
@@ -135,9 +147,9 @@ const motherboardContent = () => {
 }
 
 const powerSupplyContent = () => {
-  return powerSupplys.map((powerSupply) => {
+  return powerSupplys.map((powerSupply, index) => {
     return (
-      <article>
+      <article key={index}>
         <input
           onChange={handleFilter}
           type="checkbox"
@@ -151,9 +163,9 @@ const powerSupplyContent = () => {
 }
 
 const processorContent = () => {
-  return processors.map((processor) => {
+  return processors.map((processor, index) => {
     return (
-      <article>
+      <article key={index}>
         <input onChange={handleFilter} type="checkbox" value={processor.name} />
         &nbsp;
         <span>{processor.name}</span>
@@ -162,9 +174,21 @@ const processorContent = () => {
   });
 }
 
+const storageContent = () => {
+  return storages.map((storage, index) => {
+    return (
+      <article key={index}>
+        <input onChange={handleFilter} type="checkbox" value={storage.name} />
+        &nbsp;
+        <span>{storage.name}</span>
+      </article>
+    );
+  });
+}
+
 const dropdown = () => {
     return (
-      <>
+      <div className="sort-filter-box">
         <div className="sort-filter">
           <div className="filter-box">
             <h3 className="filter-header">
@@ -247,30 +271,32 @@ const dropdown = () => {
                     handleProcessorShow();
                     handleProcessorArrow();
                   }}
-                  className={processorStatus ? "arrow active" : "arrow"}
+                  className={processorArrowStatus ? "arrow active" : "arrow"}
                 >
                   <span></span>
                   <span></span>
                 </span>
               </div>
             </h3>
-            {processorStatus?processorContent(): null}
+            {processorStatus ? processorContent() : null}
           </div>
           <div className="filter-box">
-            <h3 className="filter-header">Storage</h3>
-            {storages.map((storage) => {
-              return (
-                <article>
-                  <input
-                    onChange={handleFilter}
-                    type="checkbox"
-                    value={storage.name}
-                  />
-                  &nbsp;
-                  <span>{storage.name}</span>
-                </article>
-              );
-            })}
+            <h3 className="filter-header">
+              Storage
+              <div className="wrap">
+                <span
+                  onClick={function () {
+                    handleStorageShow();
+                    handleStorageArrow();
+                  }}
+                  className={storageArrowStatus ? "arrow active" : "arrow"}
+                >
+                  <span></span>
+                  <span></span>
+                </span>
+              </div>
+            </h3>
+            {storageStatus? storageContent(): null}
           </div>
           <div className="filter-box">
             <h3 className="filter-header">Price</h3>
@@ -281,12 +307,12 @@ const dropdown = () => {
             &nbsp;High to Low
           </div>
         </div>
-        <div id="go-button">
-          <button onClick={handleGo} type="submit">
+        <div id="go-button-container">
+          <button id="go-button" onClick={handleGo} type="submit">
             GO
           </button>
         </div>
-      </>
+      </div>
     );
 }
 
@@ -306,13 +332,15 @@ const newArr = props.filteredArr.filter((build) =>  build.gpu.name === checkValu
 
 
 return (
-    <div className="sortFilter">
-<button onClick={handleClick}>Filter</button>
-{showStatus? dropdown(): null}
+  <div id="sort-filter-component">
+    <div id="filter-button-container">
+      <button id="filter-button" onClick={handleClick}>
+        Filter and Sort Custom Builds
+      </button>
     </div>
-)
-
-
+    {showStatus ? dropdown() : null}
+  </div>
+);
 }
 
 export default SortFilter
