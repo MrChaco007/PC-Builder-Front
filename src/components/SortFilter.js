@@ -3,7 +3,6 @@ import BuildConfigCard from "./card/index"
 import gpus from "../data/gpus"
 
 const SortFilter = (props) => {
-console.log("props1.builds", props.builds)
 const [showStatus, setShowStatus] = React.useState(false)
 const [checkStatus, setCheckStatus] = React.useState(false)
 const [checkValue, setCheckValue] = React.useState("")
