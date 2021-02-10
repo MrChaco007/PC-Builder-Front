@@ -29,13 +29,107 @@
 }
 
 /*******TEAM PAGE*******/
+/* .team {
+    position: relative;
+} */
+
 .team {
+    /* position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0; */
     background: linear-gradient(to top,#000000, #434343);
+    /* transform: skewY(-11deg); */
 }
 
 .card {
+    /* max-width: 50em; */
+    /* margin: 0 auto; */
+    /* transform: skewY(11deg); */
+    /* position: relative; */
     background: linear-gradient(#d9a7c7, #fffcdc);   
 }
+
+.hover-1 img {
+    width: 100%;
+    top:50%;
+    left: 50%;
+    /* transform: translate(-50%, -50%); */
+}
+
+.hover-1 .hover-overlay::after {
+    position: relative;
+    background: rgba(0, 0, 0, 0.4);
+}
+
+.hover-1::after {
+    content: "";
+    width: 100%;
+    height: 10px;
+    background: #47c650;
+    position: absolute;
+    /* bottom: -10px; */
+    left: 0;
+    display: block;
+    transition: all 0.3s;
+    z-index: 999;
+}
+
+/* .hover-1 .hover-overlay {
+    position: relative;
+    background: rgba(0, 0, 0, 0.4);
+} */
+
+/* .hover-1 img {
+    width: 100%;
+    top:50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+} */
+
+/* .hover-1 .hover-overlay {
+    background: rgba(0, 0, 0, 0.4);
+} */
+
+.hover-1-title::after {
+    position: absolute;
+    bottom: 1rem;
+    left: 0;
+    transition: all 0.3s;
+    padding: 2rem 3rem;
+    z-index: 99;
+}
+
+.hover-1-title span {
+    transition: all 0.4s;
+    opacity: 0;
+    color: #47c650;
+}
+
+.hover-1:hover .hover-overlay::after {
+    position: absolute;
+    background: rgba(0, 0, 0, 0.8);
+}
+
+.hover-1:hover .hover-1-title {
+    bottom: 0;
+}
+
+.hover-1:hover .hover-1-title span {
+    opacity: 1;
+}
+
+/* .hover-1:hover:after {
+    bottom: 0;
+} */
+
+
+/* .card:hover {
+    box-shadow: 8px 8px 5px #d9a7c7;
+    transform: scale(1.1);
+    transition: .3s;
+} */
 
 a:hover.icon-link {
     color: magenta;
