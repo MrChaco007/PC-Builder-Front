@@ -3,7 +3,7 @@ import React from 'react'
 import Button from './Button'
 import './style.css'
 
-const BuildConfigCard = ({ build, buttons, handleDelete }) => {
+const BuildConfigCard = ({ build, buttons, handleDelete, selectBuild }) => {
 
     // makes an array of the object properties
     // i.e ["name", "processor", "motherboard", ...]
@@ -41,6 +41,8 @@ const BuildConfigCard = ({ build, buttons, handleDelete }) => {
             switch(button) {
                 case "delete":
                     return <Button button={button} key={index} build={build} handleDelete={handleDelete}/>
+                case "edit":
+                    return <Button button={button} key={index} build={build} selectBuild={selectBuild}/>
                 default:
                     return <Button button={button} key={index} />
             }

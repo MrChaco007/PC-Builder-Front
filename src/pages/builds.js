@@ -12,7 +12,12 @@ const Builds = (props) => {
     <div>
       <SortFilter builds={props.builds} filteredArr={filteredArr} setFilteredArr={setFilteredArr}/>
       {filteredArr?.map((build, index)=> {
-return <Card key ={index} build={build} handleDelete={props.handleDelete} buttons={["edit","delete"]} />
+        return <Card key ={index} 
+                  build={build} 
+                  handleDelete={props.handleDelete}
+                  selectBuild={props.selectBuild} 
+                  buttons={["edit","delete"]} 
+                />
       })}
     </div>
   );
