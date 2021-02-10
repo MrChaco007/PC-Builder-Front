@@ -11,10 +11,20 @@ const SortFilter = (props) => {
 const [showStatus, setShowStatus] = React.useState(false)
 const [checkStatus, setCheckStatus] = React.useState(false)
 const [checkValue, setCheckValue] = React.useState("")
-const [gpuArrowStatus, setGpuArrowStatus] = React.useState(false)
-const [gpuStatus, setGpuStatus] = React.useState(true)
-const [memoryStatus, setMemoryStatus] = React.useState(true)
-const [memoryArrowStatus, setMemoryArrowStatus] = React.useState(false)
+const [gpuArrowStatus, setGpuArrowStatus] = React.useState(true)
+const [gpuStatus, setGpuStatus] = React.useState(false)
+const [memoryStatus, setMemoryStatus] = React.useState(false)
+const [memoryArrowStatus, setMemoryArrowStatus] = React.useState(true)
+const [motherboardStatus, setMotherboardStatus] = React.useState(false);
+const [motherboardArrowStatus, setMotherboardArrowStatus] = React.useState(true);
+const [powerSupplyStatus, setPowerSupplyStatus] = React.useState(false);
+const [powerSupplyArrowStatus, setPowerSupplyArrowStatus] = React.useState(
+  true
+);
+const [processorStatus, setProcessorStatus] = React.useState(false);
+const [processorArrowStatus, setProcessorArrowStatus] = React.useState(
+  true
+);
 const handleFilter = (event) => { 
 if (checkStatus === false) {
   setCheckStatus(true);
@@ -56,6 +66,33 @@ const handleMemoryShow = (event) => {
   memoryStatus ? setMemoryStatus(false) : setMemoryStatus(true);
 };
 
+const handleMotherboardArrow = (event) => {
+  motherboardArrowStatus ? setMotherboardArrowStatus(false) : setMotherboardArrowStatus(true);
+};
+
+const handleMotherboardShow = (event) => {
+  motherboardStatus ? setMotherboardStatus(false) : setMotherboardStatus(true);
+};
+
+const handlePowerSupplyArrow = (event) => {
+  powerSupplyArrowStatus? setPowerSupplyArrowStatus(false)
+    : setPowerSupplyArrowStatus(true);
+};
+
+const handlePowerSupplyShow = (event) => {
+  
+  powerSupplyStatus ? setPowerSupplyStatus(false) : setPowerSupplyStatus(true);
+};
+
+const handleProcessorArrow = (event) => {
+  processorArrowStatus? setProcessorArrowStatus(false)
+    : setProcessorArrowStatus(true);
+};
+
+const handleProcessorShow = (event) => {
+  processorStatus ? setProcessorStatus(false) : setProcessorStatus(true);
+};
+
 const gpuContent = () => {
   return(
 gpus.map((gpu) => {
@@ -70,7 +107,7 @@ gpus.map((gpu) => {
 }
 
 const memoryContent = () => {
-return memorys.map((memory) => {
+return (memorys.map((memory) => {
   return (
     <article>
       <input onChange={handleFilter} type="checkbox" value={memory.name} />
@@ -78,7 +115,51 @@ return memorys.map((memory) => {
       <span>{memory.name}</span>
     </article>
   );
-});
+}))
+}
+
+const motherboardContent = () => {
+  return motherboards.map((motherboard) => {
+    return (
+      <article>
+        <input
+          onChange={handleFilter}
+          type="checkbox"
+          value={motherboard.name}
+        />
+        &nbsp;
+        <span>{motherboard.name}</span>
+      </article>
+    );
+  });
+}
+
+const powerSupplyContent = () => {
+  return powerSupplys.map((powerSupply) => {
+    return (
+      <article>
+        <input
+          onChange={handleFilter}
+          type="checkbox"
+          value={powerSupply.name}
+        />
+        &nbsp;
+        <span>{powerSupply.name}</span>
+      </article>
+    );
+  });
+}
+
+const processorContent = () => {
+  return processors.map((processor) => {
+    return (
+      <article>
+        <input onChange={handleFilter} type="checkbox" value={processor.name} />
+        &nbsp;
+        <span>{processor.name}</span>
+      </article>
+    );
+  });
 }
 
 const dropdown = () => {
@@ -122,52 +203,58 @@ const dropdown = () => {
             {memoryStatus ? memoryContent() : null}
           </div>
           <div className="filter-box">
-            <h3 className="filter-header">Motherboard</h3>
-            {motherboards.map((motherboard) => {
-              return (
-                <article>
-                  <input
-                    onChange={handleFilter}
-                    type="checkbox"
-                    value={motherboard.name}
-                  />
-                  &nbsp;
-                  <span>{motherboard.name}</span>
-                </article>
-              );
-            })}
+            <h3 className="filter-header">
+              Motherboard
+              <div className="wrap">
+                <span
+                  onClick={function () {
+                    handleMotherboardShow();
+                    handleMotherboardArrow();
+                  }}
+                  className={motherboardArrowStatus ? "arrow active" : "arrow"}
+                >
+                  <span></span>
+                  <span></span>
+                </span>
+              </div>
+            </h3>
+            {motherboardStatus ? motherboardContent() : null}
           </div>
           <div className="filter-box">
-            <h3 className="filter-header">Power Supply</h3>
-            {powerSupplys.map((powerSupply) => {
-              return (
-                <article>
-                  <input
-                    onChange={handleFilter}
-                    type="checkbox"
-                    value={powerSupply.name}
-                  />
-                  &nbsp;
-                  <span>{powerSupply.name}</span>
-                </article>
-              );
-            })}
+            <h3 className="filter-header">
+              Power Supply
+              <div className="wrap">
+                <span
+                  onClick={function () {
+                    handlePowerSupplyShow();
+                    handlePowerSupplyArrow();
+                  }}
+                  className={powerSupplyArrowStatus ? "arrow active" : "arrow"}
+                >
+                  <span></span>
+                  <span></span>
+                </span>
+              </div>
+            </h3>
+            {powerSupplyStatus ? powerSupplyContent() : null}
           </div>
           <div className="filter-box">
-            <h3 className="filter-header">Processor</h3>
-            {processors.map((processor) => {
-              return (
-                <article>
-                  <input
-                    onChange={handleFilter}
-                    type="checkbox"
-                    value={processor.name}
-                  />
-                  &nbsp;
-                  <span>{processor.name}</span>
-                </article>
-              );
-            })}
+            <h3 className="filter-header">
+              Processor{" "}
+              <div className="wrap">
+                <span
+                  onClick={function () {
+                    handleProcessorShow();
+                    handleProcessorArrow();
+                  }}
+                  className={processorStatus ? "arrow active" : "arrow"}
+                >
+                  <span></span>
+                  <span></span>
+                </span>
+              </div>
+            </h3>
+            {processorStatus?processorContent(): null}
           </div>
           <div className="filter-box">
             <h3 className="filter-header">Storage</h3>
