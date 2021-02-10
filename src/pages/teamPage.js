@@ -8,13 +8,21 @@ import {Link} from "react-router-dom"
 const TeamPage = () => {
   return (
     <div className="team">
-      <Card className="card" style={{ width: "16rem", textAlign: "center" }}>
+      <Card className="card" style={{ width: "18rem", textAlign: "center" }}>
+        <div className="hover-1">
+        <div className="hover-overlay">
         <Card.Img
           variant="top"
-          src="https://res.cloudinary.com/dvnl2s9um/image/upload/v1608745815/15672988_10211212030552102_7722795121537872527_n_pkzqgc.jpg"
+          img src="https://res.cloudinary.com/dvnl2s9um/image/upload/v1608745815/15672988_10211212030552102_7722795121537872527_n_pkzqgc.jpg"
+          alt=""
         />
+        </div>
+        <div className="hover-1-content">
+          <h3 className="hover-1-title"><span>Colorfull</span></h3>
+        </div>
+        </div>
         <Card.Body>
-          <Card.Title style={{ fontSize: "28px" }}>Alex Chaconas</Card.Title>
+          <Card.Title style={{ fontSize: "35px" }}>Alex Chaconas</Card.Title>
           <a className="icon-link" href="https://github.com/MrChaco007">
             <FontAwesomeIcon className="icon" icon={faGithubSquare} size="2x" />
           </a>
@@ -57,13 +65,13 @@ const TeamPage = () => {
           </Accordion>
         </Card.Body>
       </Card>
-      <Card className="card" style={{ width: "16rem", textAlign: "center" }}>
+      <Card className="card" style={{ width: "18rem", textAlign: "center" }}>
         <Card.Img
           variant="top"
-          src="https://res.cloudinary.com/dfltkqotn/image/upload/c_scale,h_264/v1612906104/IMG_6547_lvytbc_a8stcg.jpg"
+          src="https://res.cloudinary.com/dfltkqotn/image/upload/c_fill,h_254,w_254/v1612906104/IMG_6547_lvytbc_a8stcg.jpg"
         />
         <Card.Body>
-          <Card.Title style={{ fontSize: "28px" }}>Adrian Mendez</Card.Title>
+          <Card.Title style={{ fontSize: "35px" }}>Adrian Mendez</Card.Title>
           <a className="icon-link" href="https://github.com/adrianmendez03">
             <FontAwesomeIcon className="icon" icon={faGithubSquare} size="2x" />
           </a>
@@ -106,13 +114,13 @@ const TeamPage = () => {
           </Accordion>
         </Card.Body>
       </Card>
-      <Card className="card" style={{ width: "16rem", textAlign: "center" }}>
+      <Card className="card" style={{ width: "18rem", textAlign: "center" }}>
         <Card.Img
           variant="top"
           src="https://res.cloudinary.com/dfltkqotn/image/upload/v1612905073/1608763532612_z2rmzr.jpg"
         />
         <Card.Body>
-          <Card.Title style={{ fontSize: "28px" }}>Jorge Soto</Card.Title>
+          <Card.Title style={{ fontSize: "35px" }}>Jorge Soto</Card.Title>
           <a className="icon-link" href="https://github.com/acurunner79">
             <FontAwesomeIcon className="icon" icon={faGithubSquare} size="2x" />
           </a>
@@ -147,13 +155,13 @@ const TeamPage = () => {
           </Accordion>
         </Card.Body>
       </Card>
-      <Card className="card" style={{ width: "16rem", textAlign: "center" }}>
+      <Card className="card" style={{ width: "18rem", textAlign: "center" }}>
         <Card.Img
           variant="top"
           src="https://avatars.githubusercontent.com/u/75413323?s=400&u=9beccb5dd76ccdf3c7aaba2d1f120856285b26a4&v=4"
         />
         <Card.Body>
-          <Card.Title style={{ fontSize: "28px" }}>Andrew Arias</Card.Title>
+          <Card.Title style={{ fontSize: "35px" }}>Andrew Arias</Card.Title>
           <a className="icon-link" href="https://github.com/lta4">
             <FontAwesomeIcon className="icon" icon={faGithubSquare} size="2x" />
           </a>
@@ -178,18 +186,10 @@ const TeamPage = () => {
               </Accordion.Toggle>
               <Accordion.Collapse eventKey="0">
                 <Card.Body style={{ fontSize: "16px" }}>
-                  Alex is a software developer with 4 years of marketing and
-                  communications experience. He combines his rapidly evolving
-                  coding potential with his exceptional soft skills to not only
-                  find solutions to technical problems but also ensure
-                  interpersonal conflict does not get in the way.
+                  Andrew is a Software Developer who was born and raised in Los Angeles. Now residing in San Diego, he has committed 6 years to the Financial Service Industry and another 6 too the Food and Beverage Hospitality Industry.
                   <br />
                   <br />
-                  He is motivated by his appetite to get better at what he does
-                  and to become a reliable asset for his team. My marketing
-                  experience enables him to see how even the most robust
-                  back-end logic is futile without an intuitive and appealing
-                  front-end design.
+                  With his newly aquired skills in HTML, CSS, JavaScript, and React, he strives to implement a soft, clean touch with great responsiveness and color pop. Simple and reliability are dynamics he enjoys, in order make a proper statement. It really is the simple things that stand out!
                 </Card.Body>
               </Accordion.Collapse>
             </Card>
