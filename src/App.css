@@ -17,6 +17,19 @@ body {
   pointer-events: none;
 }
 
+button, input[type="submit"] {
+  color: #fff;
+  border: none;
+  background-color: transparent;
+  border: 2px solid #fff;
+  transition: all 0.3s;
+}
+
+button:hover, input[type="submit"]:hover {
+  border-color: magenta;
+  color: magenta;
+}
+
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {
     animation: App-logo-spin infinite 20s linear;
