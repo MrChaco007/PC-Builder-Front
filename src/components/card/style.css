@@ -57,6 +57,14 @@
     background: linear-gradient(#d9a7c7, #fffcdc);   
 }
 
+.card-body {
+    color: black;
+}
+
+/* .card-title.h5 {
+    color: magenta;
+} */
+
 .hover-1 img {
     width: 100%;
     top:50%;
@@ -64,10 +72,10 @@
     /* transform: translate(-50%, -50%); */
 }
 
-.hover-1 .hover-overlay::after {
-    position: relative;
+/* .hover-1 .hover-overlay ::after {
+    position: absolute;
     background: rgba(0, 0, 0, 0.4);
-}
+} */
 
 .hover-1::after {
     content: "";
@@ -82,8 +90,8 @@
     z-index: 999;
 }
 
-/* .hover-1 .hover-overlay {
-    position: relative;
+/* .hover-1 .hover-overlay::after {
+    position: absolute;
     background: rgba(0, 0, 0, 0.4);
 } */
 
@@ -113,10 +121,10 @@
     color: #47c650;
 }
 
-.hover-1:hover .hover-overlay::after {
+/* .hover-1:hover .hover-overlay::after {
     position: absolute;
     background: rgba(0, 0, 0, 0.8);
-}
+} */
 
 .hover-1:hover .hover-1-title {
     bottom: 0;
@@ -130,8 +138,8 @@
     bottom: 0;
 } */
 
-
-/* .card:hover {
+/* 
+.card:hover {
     box-shadow: 8px 8px 5px #d9a7c7;
     transform: scale(1.1);
     transition: .3s;
