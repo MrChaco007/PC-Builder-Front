@@ -28,6 +28,7 @@ const BuildConfigCard = ({ build, buttons, handleDelete, selectBuild }) => {
                 <li className="spec" key={index}>
                     <div className="header">{spec}</div>
                     <div className="name">{specObj.name}</div>
+                    <div>{specObj.spec}</div>
                 </li>
             )
         })
@@ -37,7 +38,7 @@ const BuildConfigCard = ({ build, buttons, handleDelete, selectBuild }) => {
     const renderButtons = () => {
         // props.buttons = ["create", "edit", "delete"]
         // maps over props.buttons and returns a component with the corresponding functionality 
-        return buttons.map((button, index) => {
+        return buttons?.map((button, index) => {
             switch(button) {
                 case "delete":
                     return <Button button={button} key={index} build={build} handleDelete={handleDelete}/>
