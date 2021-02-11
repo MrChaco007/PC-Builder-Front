@@ -13,7 +13,13 @@ const Button = ({ button, build, handleDelete, selectBuild }) => {
         case "delete":
             return <button className="button" onClick={()=>handleDelete(build)}>Delete</button>
         default:
-            return <Link className="button" to="/create">Customize</Link>
+            return (
+              <button>
+                <Link className="button" to="/create">
+                  Customize
+                </Link>
+              </button>
+            );
     }
 }
 
