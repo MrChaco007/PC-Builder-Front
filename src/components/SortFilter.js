@@ -6,11 +6,12 @@ import motherboards from "../data/motherboards"
 import powerSupplys from "../data/powerSupplys"
 import processors from "../data/processors"
 import storages from "../data/storages"
+import { faLessThanEqual } from "@fortawesome/free-solid-svg-icons"
 
 const SortFilter = (props) => {
 const [showStatus, setShowStatus] = React.useState(false)
 const [checkStatus, setCheckStatus] = React.useState(false)
-const [checkValue, setCheckValue] = React.useState("")
+const [checkValue, setCheckValue] = React.useState([])
 const [gpuArrowStatus, setGpuArrowStatus] = React.useState(true)
 const [gpuStatus, setGpuStatus] = React.useState(false)
 const [memoryStatus, setMemoryStatus] = React.useState(false)
@@ -27,30 +28,26 @@ const [processorArrowStatus, setProcessorArrowStatus] = React.useState(
 );
 const [storageStatus, setStorageStatus] = React.useState(false);
 const [storageArrowStatus, setStorageArrowStatus] = React.useState(true);
+
+//Filter/Sort Checboxes
+const [highCheckStatus, setHighCheckStatus] = React.useState(false)
+const [lowCheckStatus, setLowCheckStatus] = React.useState(false)
+const [oneCheckStatus, setOneCheckStatus] = React.useState(false)
+const [twoCheckStatus, setTwoCheckStatus] = React.useState(false);
+const [fourCheckStatus, setFourCheckStatus] = React.useState(false);
+const [eightCheckStatus, setEightCheckStatus] = React.useState(false);
+const [sixteenCheckStatus, setSixteenCheckStatus] = React.useState(false);
+const [twentyFourCheckStatus, setTwentyFourCheckStatus] = React.useState(false);
+const [gpuArray, setGpuArray] = React.useState([])
 const handleFilter = (event) => { 
 if (checkStatus === false) {
   setCheckStatus(true);
   setCheckValue(event.target.value);
+  console.log(checkValue)
 } else {
   setCheckStatus(false);
 }
 }
-
-const sortHigh = (event) => {
-  let newArr = [...props.filteredArr];
-    newArr.sort(
-      (a, b) => parseFloat(b.price) - parseFloat(a.price)
-    );
-    props.setFilteredArr(newArr);
-  };
-
-const sortLow = (event) => {
-  let newArr = [...props.filteredArr];
-    newArr.sort(
-      (a, b) => parseFloat(a.price) - parseFloat(b.price)
-    );
-    props.setFilteredArr(newArr);
-  };
 
 const handleGpuArrow = (event) => {
 gpuArrowStatus? setGpuArrowStatus(false) : setGpuArrowStatus(true)
@@ -105,26 +102,162 @@ const handleStorageShow = (event) => {
   storageStatus ? setStorageStatus(false) : setStorageStatus(true);
 };
 
+const handleHigh = () => {
+  if (highCheckStatus === false){
+    setHighCheckStatus(true)
+    console.log("highCheckStatus".highCheckStatus);
+} else {
+  setHighCheckStatus(false)
+  console.log("highCheckStatus".highCheckStatus);
+}
+
+} 
+
+const handleLow = () => {
+  if (lowCheckStatus === false) {
+    setLowCheckStatus(true);
+      console.log("lowCheckStatus".lowCheckStatus);
+  } else {
+    setLowCheckStatus(false);
+      console.log("lowCheckStatus".lowCheckStatus);
+  }
+
+}; 
+
+
+const handleOne = (event) => {
+ if (oneCheckStatus === false){
+  gpuArray.push(event.target.value);
+   setGpuArray(gpuArray);
+   console.log(gpuArray)
+   setOneCheckStatus(true)
+ } else {
+  let index = gpuArray.indexOf(event.target.value)
+  gpuArray.splice(index, 1);
+ setGpuArray(gpuArray)
+ console.log(gpuArray);
+ setOneCheckStatus(false)
+ }
+}
+
+const handleTwo = (event) => {
+  if (twoCheckStatus === false) {
+    gpuArray.push(event.target.value);
+    setGpuArray(gpuArray);
+    console.log(gpuArray);
+    setTwoCheckStatus(true);
+  } else {
+    let index = gpuArray.indexOf(event.target.value);
+    gpuArray.splice(index, 1);
+    setGpuArray(gpuArray);
+    console.log(gpuArray);
+    setTwoCheckStatus(false);
+  }
+};
+
+const handleFour = (event) => {
+  if (fourCheckStatus === false) {
+    gpuArray.push(event.target.value);
+    setGpuArray(gpuArray);
+    console.log(gpuArray);
+    setFourCheckStatus(true);
+  } else {
+    let index = gpuArray.indexOf(event.target.value);
+    gpuArray.splice(index, 1);
+    setGpuArray(gpuArray);
+    console.log(gpuArray);
+    setFourCheckStatus(false);
+  }
+};
+
+const handleEight = (event) => {
+  if (eightCheckStatus === false) {
+    gpuArray.push(event.target.value);
+    setGpuArray(gpuArray);
+    console.log("gpuArray", gpuArray);
+    setEightCheckStatus(true);
+  } else {
+    let index = gpuArray.indexOf(event.target.value);
+    gpuArray.splice(index, 1);
+    setGpuArray(gpuArray);
+    console.log(gpuArray);
+    setEightCheckStatus(false);
+  }
+};
+
+const handleSixteen = (event) => {
+  if (sixteenCheckStatus === false) {
+    gpuArray.push(event.target.value);
+    setGpuArray(gpuArray);
+    console.log(gpuArray);
+    setSixteenCheckStatus(true);
+  } else {
+    let index = gpuArray.indexOf(event.target.value);
+    gpuArray.splice(index, 1);
+    setGpuArray(gpuArray);
+    console.log(gpuArray);
+    setSixteenCheckStatus(false);
+  }
+};
+
+const handleTwentyFour = (event) => {
+  if (twentyFourCheckStatus === false) {
+    gpuArray.push(event.target.value);
+    setGpuArray(gpuArray);
+    console.log(gpuArray);
+    setTwentyFourCheckStatus(true);
+  } else {
+    let index = gpuArray.indexOf(event.target.value);
+    gpuArray.splice(index, 1);
+    setGpuArray(gpuArray);
+    console.log(gpuArray);
+    setTwentyFourCheckStatus(false);
+  }
+};
 const gpuContent = () => {
-  return(
-gpus.map((gpu, index) => {
   return (
-    <article key={index}>
-      <input onChange={handleFilter} type="checkbox" value={gpu.name} />
-      &nbsp;
-      <span>{gpu.name}</span>
-    </article>
+    <>
+      <article>
+        <input onChange={handleOne} type="checkbox" value="1GB" />
+        &nbsp;
+        <span>1GB</span>
+      </article>
+      <article>
+        <input onChange={handleTwo} type="checkbox" value="2GB" />
+        &nbsp;
+        <span>2GB</span>
+      </article>
+      <article>
+        <input onChange={handleFour} type="checkbox" value="4GB" />
+        &nbsp;
+        <span>4GB</span>
+      </article>
+      <article>
+        <input onChange={handleEight} type="checkbox" value="8GB" />
+        &nbsp;
+        <span>8GB</span>
+      </article>
+      <article>
+        <input onChange={handleSixteen} type="checkbox" value="16GB" />
+        &nbsp;
+        <span>16GB</span>
+        <article>
+          <input onChange={handleTwentyFour} type="checkbox" value="24GB" />
+          &nbsp;
+          <span>24GB</span>
+        </article>
+      </article>
+    </>
   );
-}))
 }
 
 const memoryContent = () => {
 return (memorys.map((memory, index) => {
   return (
     <article key={index}>
-      <input onChange={handleFilter} type="checkbox" value={memory.name} />
+      <input onChange={handleFilter} type="checkbox" value={memory.specObj} />
       &nbsp;
-      <span>{memory.name}</span>
+      <span>{memory.spec}</span>
     </article>
   );
 }))
@@ -300,10 +433,10 @@ const dropdown = () => {
           </div>
           <div className="filter-box">
             <h3 className="filter-header">Price</h3>
-            <input onChange={sortLow} type="checkbox" />
+            <input onChange={handleLow} type="checkbox" />
             &nbsp;Low to High
             <br />
-            <input onChange={sortHigh} type="checkbox" />
+            <input onChange={handleHigh} type="checkbox" />
             &nbsp;High to Low
           </div>
         </div>
@@ -319,16 +452,52 @@ const dropdown = () => {
 
 const handleClick = () => {
     showStatus? setShowStatus(false):setShowStatus(true)
-    setCheckStatus(false)
+    setGpuArray([])
+    setHighCheckStatus(false);
+    setLowCheckStatus(false);
+    setOneCheckStatus(false);
+    setTwoCheckStatus(false);
+    setFourCheckStatus(false);
+    setEightCheckStatus(false);
+    setSixteenCheckStatus(false);
+    setTwentyFourCheckStatus(false);
     props.setFilteredArr(props.builds);
 }
 
 const handleGo = (event) => {
 event.preventDefault()
-const newArr = props.filteredArr.filter((build) =>  build.gpu.name === checkValue)
- if (checkStatus) {props.setFilteredArr(newArr)} 
- setShowStatus(false)
+setOneCheckStatus(false)
+setTwoCheckStatus(false);
+setFourCheckStatus(false);
+setEightCheckStatus(false);
+setSixteenCheckStatus(false)
+setTwentyFourCheckStatus(false)
+let newArr = []
+for (let i = 0; i < props.builds.length; i++){
+  if (gpuArray.includes(props.builds[i].gpu.spec)){
+newArr.push(props.builds[i])
+  }
 }
+props.setFilteredArr(newArr)
+if(highCheckStatus){
+ let sortArr = newArr.sort(
+   (a, b) =>
+     parseFloat(b.price) -
+     parseFloat(a.price)
+ );
+ props.setFilteredArr(sortArr)}
+ if (lowCheckStatus) {
+   let sortArr = newArr.sort(
+     (a, b) =>
+       parseFloat(a.price) -
+       parseFloat(b.price)
+   );
+   props.setFilteredArr(sortArr);
+ }
+ setShowStatus(false)
+
+}
+
 
 
 return (
