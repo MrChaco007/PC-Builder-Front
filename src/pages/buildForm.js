@@ -1,4 +1,6 @@
 import React from "react";
+
+import './buildForm.css'
 import Gpus from "../data/gpus"
 import Processors from "../data/processors"
 import PowerSupplys from "../data/powerSupplys"
