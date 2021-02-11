@@ -18,11 +18,11 @@ const TeamPage = () => {
         />
         </div>
         <div className="hover-1-content">
-          <h3 className="hover-1-title"><span>Colorfull</span></h3>
+          <h3 className="hover-1-title"><span>Adrian Chaconas</span></h3>
         </div>
         </div>
         <Card.Body>
-          <Card.Title style={{ fontSize: "35px" }}>Alex Chaconas</Card.Title>
+          {/* <Card.Title style={{ fontSize: "35px" }}>Alex Chaconas</Card.Title> */}
           <a className="icon-link" href="https://github.com/MrChaco007">
             <FontAwesomeIcon className="icon" icon={faGithubSquare} size="2x" />
           </a>
