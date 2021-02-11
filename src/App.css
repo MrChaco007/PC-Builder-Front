@@ -189,6 +189,24 @@ width: 250px;
   cursor: pointer;
 }
 
-button {
-  background-color: magenta;
+button, input {
+  background-color: transparent;
+  color: white; 
+  border-radius: 5px !important; 
+  border: 2px solid white; 
+  font-weight: bold;
+  transition: all 0.3s ease;
+}
+
+button:hover, input:hover {
+  border: 2px solid magenta;
+  color: magenta
+}
+
+.btn {
+  border-radius: 0rem !important; 
+}
+
+.btn-dark:focus{
+  box-shadow: none !important; 
 }
