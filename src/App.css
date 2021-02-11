@@ -106,7 +106,7 @@ margin: 10px;
 }
 
 .sort-filter-box{ 
-  border: 1px solid black; 
+  border: 1px solid white; 
   border-radius: 0.25rem; 
   margin: 20px; 
 }
@@ -114,13 +114,21 @@ margin: 10px;
 .filter-box{
   width: 325px;
   margin: 10px; 
-  border: 1px black solid; 
+  border: 1px white solid; 
+  border-radius: 0.25rem; 
   padding: 10px; 
+  transition: all 0.3s ease;
 }
+
+.filter-box:hover{ 
+  color: magenta;
+  border:1px solid magenta;
+}
+
 
 #go-button {
 width: 100px; 
-margin: 0 auto; 
+margin: 0 auto 10px auto; 
 }
 
 #go-button-container{
@@ -209,4 +217,9 @@ button:hover, input:hover {
 
 .btn-dark:focus{
   box-shadow: none !important; 
+}
+
+.filter-box article {
+  padding: 5px 0px;
+  border-bottom: 1px solid rgb(177, 177, 177); 
 }

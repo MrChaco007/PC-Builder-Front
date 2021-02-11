@@ -9,7 +9,17 @@ const Button = ({ button, build, handleDelete, selectBuild }) => {
     
     switch(button) {
         case "edit":
-            return <Link className="button" to="/edit" onClick={() => selectBuild(build)}>Edit</Link>
+            return (
+              <button>
+                <Link
+                  className="button"
+                  to="/edit"
+                  onClick={() => selectBuild(build)}
+                >
+                  Edit
+                </Link>
+              </button>
+            );
         case "delete":
             return <button className="button" onClick={()=>handleDelete(build)}>Delete</button>
         default:

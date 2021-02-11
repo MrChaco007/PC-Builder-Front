@@ -38,7 +38,11 @@ const [fourCheckStatus, setFourCheckStatus] = React.useState(false);
 const [eightCheckStatus, setEightCheckStatus] = React.useState(false);
 const [sixteenCheckStatus, setSixteenCheckStatus] = React.useState(false);
 const [twentyFourCheckStatus, setTwentyFourCheckStatus] = React.useState(false);
+const [me16CheckStatus, setMe16CheckStatus] = React.useState(false)
+const [me32CheckStatus, setMe32CheckStatus] = React.useState(false);
+const [me64CheckStatus, setMe64CheckStatus] = React.useState(false);
 const [gpuArray, setGpuArray] = React.useState([])
+const [meArray, setMeArray] = React.useState([]);
 const handleFilter = (event) => { 
 if (checkStatus === false) {
   setCheckStatus(true);
@@ -214,6 +218,50 @@ const handleTwentyFour = (event) => {
     setTwentyFourCheckStatus(false);
   }
 };
+
+const handleMe16 = (event) => {
+  if (me16CheckStatus === false) {
+    meArray.push(event.target.value);
+    setMeArray(meArray);
+    console.log(meArray);
+    setMe16CheckStatus(true);
+  } else {
+    let index = meArray.indexOf(event.target.value);
+    meArray.splice(index, 1);
+    setMeArray(meArray);
+    setMe16CheckStatus(false);
+  }
+};
+
+const handleMe32 = (event) => {
+  if (me32CheckStatus === false) {
+    meArray.push(event.target.value);
+    setMeArray(meArray);
+     console.log(meArray);
+    setMe32CheckStatus(true);
+  } else {
+    let index = meArray.indexOf(event.target.value);
+    meArray.splice(index, 1);
+    setMeArray(meArray);
+     console.log(meArray);
+    setMe32CheckStatus(false);
+  }
+};
+
+const handleMe64 = (event) => {
+  if (me64CheckStatus === false) {
+    meArray.push(event.target.value);
+    setMeArray(meArray);
+     console.log(meArray);
+    setMe64CheckStatus(true);
+  } else {
+    let index = meArray.indexOf(event.target.value);
+    meArray.splice(index, 1);
+    setMeArray(meArray);
+     console.log(meArray);
+    setMe64CheckStatus(false);
+  }
+};
 const gpuContent = () => {
   return (
     <>
@@ -241,26 +289,36 @@ const gpuContent = () => {
         <input onChange={handleSixteen} type="checkbox" value="16GB" />
         &nbsp;
         <span>16GB</span>
+        </article>
         <article>
           <input onChange={handleTwentyFour} type="checkbox" value="24GB" />
           &nbsp;
           <span>24GB</span>
-        </article>
       </article>
     </>
   );
 }
 
 const memoryContent = () => {
-return (memorys.map((memory, index) => {
   return (
-    <article key={index}>
-      <input onChange={handleFilter} type="checkbox" value={memory.specObj} />
-      &nbsp;
-      <span>{memory.spec}</span>
-    </article>
+    <>
+      <article>
+        <input onChange={handleMe16} type="checkbox" value="16GB" />
+        &nbsp;
+        <span>16GB</span>
+      </article>
+      <article>
+        <input onChange={handleMe32} type="checkbox" value="32GB" />
+        &nbsp;
+        <span>32GB</span>
+      </article>
+      <article>
+        <input onChange={handleMe64} type="checkbox" value="64GB" />
+        &nbsp;
+        <span>64GB</span>
+        </article>
+    </>
   );
-}))
 }
 
 const motherboardContent = () => {
@@ -453,6 +511,7 @@ const dropdown = () => {
 const handleClick = () => {
     showStatus? setShowStatus(false):setShowStatus(true)
     setGpuArray([])
+    setMeArray([])
     setHighCheckStatus(false);
     setLowCheckStatus(false);
     setOneCheckStatus(false);
@@ -461,6 +520,9 @@ const handleClick = () => {
     setEightCheckStatus(false);
     setSixteenCheckStatus(false);
     setTwentyFourCheckStatus(false);
+    setMe16CheckStatus(false)
+    setMe32CheckStatus(false);
+    setMe64CheckStatus(false);
     props.setFilteredArr(props.builds);
 }
 
@@ -472,10 +534,14 @@ setFourCheckStatus(false);
 setEightCheckStatus(false);
 setSixteenCheckStatus(false)
 setTwentyFourCheckStatus(false)
+setMe16CheckStatus(false);
+setMe32CheckStatus(false);
+setMe64CheckStatus(false);
 let newArr = []
 for (let i = 0; i < props.builds.length; i++){
-  if (gpuArray.includes(props.builds[i].gpu.spec)){
+  if (gpuArray.includes(props.builds[i].gpu.spec) && meArray.includes(props.builds[i].memory.spec)){
 newArr.push(props.builds[i])
+console.log(newArr)
   }
 }
 props.setFilteredArr(newArr)
