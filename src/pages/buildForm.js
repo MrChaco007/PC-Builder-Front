@@ -132,7 +132,9 @@ const BuildForm = (props) => {
 
   const renderCompare = () => {
     return props.location.pathname === "/create" ? (
-      <Card build={formData}/>
+      <div id="display">
+        <Card build={formData}/>
+      </div>
     ) : (
       <>
         <Card build={props.build} />
