@@ -1,0 +1,129 @@
+/*********************TEAM PAGE************************/
+
+/****HEAD/CONTAINER/CARDS****/
+
+.teamHead {
+    text-align: center;
+    font-size: 30px;
+    margin: 10px;
+}
+
+.team {
+    margin-top: 25px;
+}
+
+.card {
+    margin: 10px;
+    background: linear-gradient(#d9a7c7, #fffcdc);  
+    z-index: 49;  
+}
+
+.card-body {
+    padding: 3px;
+    color: black;
+    margin: 0px 10px 0px 10px;
+}
+
+/****CONTENT****/
+
+.hover-1-content {
+    margin-top: 10px;
+}
+
+.hover-1-title span {
+    transition: all 0.4s ease;
+    opacity: 0.30;
+    color: #000000;
+    font-size: 35px;
+}
+
+.hover-1:hover .hover-1-title span {
+    opacity: 1;
+}
+
+.hover-1:hover:after {
+    bottom: 0;
+}
+
+.firstLetter {
+    font-size: 25px;
+}
+
+.firstLetter::selection {
+    background: #ffb7b7;
+}
+
+.infoPar::selection {
+    background: #ffb7b7;
+}
+
+button:hover {
+    color: magenta;
+    transition: all 0.3s ease;
+    text-decoration: none;
+    z-index: 49; 
+}
+
+.icon {
+    margin: 0;
+}
+
+.icon-link {
+    padding: 0px 5px 10px 5px;
+}
+
+button {
+  text-decoration: none;
+  color: white;
+  transition: all 0.3s ease;
+}
+
+button:hover { 
+    transform: scale(1.2); 
+}
+
+a:hover {
+    color: magenta;
+    transition: all 0.3s ease;
+    text-decoration: none;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/********TABLET********/
+
+@media (min-width: 468px) {
+    .teamHead {
+        text-align: center;
+        font-size: 45px;
+        margin: 10px;
+    }
+
+    .team {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .cardsContainer {
+        display: flex;
+        flex-direction: row;
+        flex-flow: wrap;
+        justify-content: space-around;
+
+    }
+}
+
+/*******Desktop*******/
+
+@media (min-width: 1024px) {
+    .teamHead {
+        font-size: 60px;
+    }
+
+    .cardsContainer {
+        margin-top: 15px;
+    }
+}

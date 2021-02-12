@@ -1,5 +1,17 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@300&family=Titillium+Web&display=swap');
+body {
+  height: 100%;
+  background: linear-gradient(to top,#000000, #434343);
+}
+
 .App {
-  text-align: center;
+  color: white;
+  height: 100%;
+  font-family: 'Titillium Web', sans-serif;
+  width: 100vw;
+  overflow-x: hidden;
+  overflow-y: auto;
+  scroll-behavior: smooth;
 }
 
 .App-logo {
@@ -15,7 +27,6 @@
 
 .App-header {
   background-color: #282c34;
-  min-height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -28,11 +39,164 @@
   color: #61dafb;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+
+
+
+#briefcase{
+  margin-left: 10px; 
+  margin-right: 10px; 
+}
+
+.icon {
+  margin-bottom: 20px; 
+}
+
+.icon-link {
+  color: #23272B;
+}
+
+.team{ 
+  display: flex; 
+  justify-content: space-evenly;
+  flex-wrap: wrap; 
+}
+
+.card{
+  min-width: 200px; 
+  margin: 10px; 
+}
+
+.sort-filter{
+display: flex; 
+flex-wrap: wrap;
+justify-content:space-evenly;
+margin: 10px; 
+min-width: 150px;
+}
+
+.sort-filter-box{ 
+  border: 1px solid white;
+  border-radius: 0.25rem; 
+  margin: 20px; 
+}
+
+.filter-box{
+  width: 250px;
+  margin: 10px; 
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  border-radius: 0.25rem; 
+  padding: 10px; 
+  transition: all 0.3s ease;
+}
+
+.filter-box:hover{ 
+  color: magenta;
+  border:1px solid magenta;
+}
+
+
+#go-button {
+width: 100px; 
+margin: 0 auto 10px auto; 
+}
+
+#go-button-container{
+  margin: 10px auto; 
+  width: 200px; 
+  text-align: center;
+}
+.arrow {
+  width: 1.5rem;
+  height: 1.5rem;
+  display: inline-block;
+  position: relative;
+  margin: 10px 10px 0px 10px;
+  border: 1px solid rgb(66, 66, 66); 
+  border-radius: 0.25rem;
+  background-color: rgb(66, 66, 66);
+  box-shadow: 1px 1px 3px grey;
+}
+.arrow span {
+  top: 0.6rem;
+  position: absolute;
+  width: .87rem;
+  height: 0.15rem;
+  background-color: magenta;
+  display: inline-block;
+  transition: all 0.2s ease;
+}
+.arrow span:first-of-type {
+  left: 0;
+  transform: rotate(45deg);
+}
+.arrow span:last-of-type {
+  right: 0;
+  transform: rotate(-45deg);
+}
+.arrow.active span:first-of-type {
+  transform: rotate(-45deg);
+}
+.arrow.active span:last-of-type {
+  transform: rotate(45deg);
+}
+
+.filter-header{
+width: 150px; 
+text-align:center; 
+ margin: 0px auto !important; 
+}
+
+#sort-filter-component{
+  max-width: 1200px; 
+  margin: 0px auto; 
+}
+
+#filter-button{ 
+  width: 200px; 
+  margin: 20px 10px auto;
+}
+
+#filter-button-container{
+  max-width: 1200px; 
+  text-align: center;
+}
+
+.wrap span{
+  cursor: pointer;
+}
+
+.underline {
+  height: 2px;
+  background: linear-gradient(to right, #fff, transparent);
+}
+button, input {
+  background-color: transparent;
+  color: white; 
+  border-radius: 5px !important; 
+  border: 2px solid white; 
+  font-weight: bold;
+  transition: all 0.3s ease;
+  z-index: 100; 
+}
+
+button:hover, input:hover {
+  border: 2px solid magenta;
+  color: magenta
+}
+
+.btn {
+  border-radius: 0rem !important; 
+}
+
+.btn-dark:focus{
+  box-shadow: none !important; 
+}
+
+.filter-box article {
+  padding: 5px 0px;
+  border-bottom: 1px solid rgb(177, 177, 177); 
+}
+
+#last-item{
+  border-bottom: none; 
 }
