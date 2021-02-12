@@ -1,0 +1,113 @@
+/*******TEAM PAGE*******/
+
+.teamHead {
+    text-align: center;
+    font-size: 30px;
+    margin: 10px;
+}
+
+.team {
+    margin-top: 20px;
+}
+
+.card {
+    margin: 10px;
+    background: linear-gradient(#d9a7c7, #fffcdc);   
+}
+
+.card-body {
+    padding: 3px;
+    color: black;
+    margin: 0px 10px 0px 10px;
+}
+
+.hover-1-title::after {
+    transition: all 0.3s;
+    z-index: 99;
+}
+
+.hover-1-title span {
+    transition: all 0.4s ease;
+    opacity: 0.30;
+    color: #000000;
+    font-size: 35px;
+}
+
+.hover-1:hover .hover-1-title span {
+    opacity: 1;
+}
+
+.hover-1:hover:after {
+    bottom: 0;
+}
+
+.firstLetter {
+    font-size: 25px;
+}
+
+.firstLetter::selection {
+    background: #ffb7b7;
+}
+
+.infoPar::selection {
+    background: #ffb7b7;
+}
+
+button:hover {
+    color: magenta;
+    transition: all 0.3s ease;
+    text-decoration: none;
+}
+
+.icon-link {
+    padding: 0px 5px 0px 5px;
+}
+
+button {
+  text-decoration: none;
+  color: white;
+  transition: all 0.3s ease;
+}
+
+button:hover { 
+    transform: scale(1.2); 
+}
+
+a:hover {
+    color: magenta;
+    transition: all 0.3s ease;
+    text-decoration: none;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/*****ACCORDION*****/
+
+.alex {
+    display: flex;
+    flex: none;
+}
+
+@media (min-width: 768px) {
+    .teamHead {
+        text-align: center;
+        font-size: 45px;
+        margin: 10px;
+    }
+
+    .team {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .cardsContainer {
+        display: flex;
+        flex-direction: row;
+        flex-flow: wrap;
+        justify-content: space-around;
+
+    }
+}
