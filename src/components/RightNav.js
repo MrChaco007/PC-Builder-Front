@@ -3,22 +3,23 @@ import './rightNav.css'
 import { Link } from "react-router-dom"
 
 
-const RightNav = ({ open }) => {
+const RightNav = (props) => {
+  
         return (     
-        <>
+        <div>
             <Link to="/">
-              <li className="links">Home</li>
+              <li className="links" onClick={props.handleClick}>Home</li>
             </Link>
             <Link to="/builds">
-              <li className="links">Builds</li>
+              <li className="links" onClick={props.handleClick}>Builds</li>
             </Link>
             <Link to="/create">
-              <li className="links">Create</li>
+              <li className="links" onClick={props.handleClick}>Create</li>
             </Link>
             <Link to="/team">
-              <li className="links">About the team</li>
+              <li className="links" onClick={props.handleClick}>About the team</li>
             </Link>
-        </>
+        </div>
         )
 }
 
