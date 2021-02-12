@@ -1,6 +1,7 @@
 import React from "react";
 
 import './buildForm.css'
+import Card from '../components/card/index'
 import Gpus from "../data/gpus"
 import Processors from "../data/processors"
 import PowerSupplys from "../data/powerSupplys"
@@ -64,9 +65,80 @@ const BuildForm = (props) => {
   const renderOptions = (arr) => {
     return arr.map((item, index) => {
       return (
-        <option key={index} value={index}>{`${item.name} - $${item.price}`}</option>
+        <option key={index} value={index}>{`${item.name} / ${item.spec} - $${item.price}`}</option>
       )
     })
+  }
+
+  const renderForm = () => {
+    return (
+      <form className="form"onSubmit={handleSubmit}>
+        <div className="input-container">
+          <label htmlFor="name">Name:</label>
+          <input
+            value={formData.name}
+            onChange={handleChange}
+            type="text"
+            name="name"
+          />
+          <div className="underline"></div>
+        </div>
+        <div className="input-container">
+          <label htmlFor="gpu">GPU:</label>
+          <select value={formData.gpu.value} onChange={handleChange} name="gpu" price="price" spec="spec">
+            {renderOptions(Gpus)}
+          </select> 
+          <div className="underline"></div> 
+        </div>
+        <div className="input-container"> 
+          <label htmlFor="memory">Memory:</label>             
+          <select value={formData.memory.value} onChange={handleChange} name="memory" price="price" spec="spec">
+            {renderOptions(Memorys)}
+          </select> 
+          <div className="underline"></div>
+        </div>
+        <div className="input-container">
+          <label htmlFor="motherboard">Motherboard:</label>    
+          <select value={formData.motherboard.value} onChange={handleChange} name="motherboard" price="price" spec="spec">
+            {renderOptions(Motherboards)}
+          </select>
+          <div className="underline"></div> 
+        </div>
+        <div className="input-container">
+          <label>Power Supply:</label>            
+          <select value={formData.powerSupply.value} onChange={handleChange} name="powerSupply" price="price" spec="spec">
+            {renderOptions(PowerSupplys)}
+          </select>
+          <div className="underline"></div>   
+        </div>
+        <div className="input-container">
+          <label>Processor:</label>      
+          <select value={formData.processor.value} onChange={handleChange} name="processor" price="price" spec="spec">
+            {renderOptions(Processors)}
+          </select>
+          <div className="underline"></div>   
+        </div>
+        <div className="input-container">
+          <label>Storage:</label>     
+          <select value={formData.storage.value} onChange={handleChange} name="storage" price="price" spec="spec">
+            {renderOptions(Storages)}
+          </select>
+          <div className="underline"></div> 
+        </div>
+        <input id="submit" type="submit" value="Submit" />
+      </form>
+    )
+  }
+
+  const renderCompare = () => {
+    return props.location.pathname === "/create" ? (
+      <Card build={formData}/>
+    ) : (
+      <>
+        <Card build={props.build} />
+        <Card build={formData} />
+      </>
+    )
   }
 
   const loading = () => {
@@ -74,68 +146,13 @@ const BuildForm = (props) => {
     return <h2>loading</h2>
   }
   const loaded = () => {
-    console.log(formData.gpu.value)
     return (
-      <form onSubmit={handleSubmit}>
-      <input
-        value={formData.name}
-        onChange={handleChange}
-        type="text"
-        className="form-control"
-        name="name"
-      />
-      <div>${formData.price}</div>
-        <br />
-        <label>
-          GPU: {props.build["gpu"].name} ${props.build["gpu"].price}
-          <br />
-          <select value={formData.gpu.value} onChange={handleChange} name="gpu" price="price" spec="spec">
-            {renderOptions(Gpus)}
-          </select>  
-        </label>
-        <br />
-        <label>
-          Memory: {props.build["memory"].name} ${props.build["memory"].price}
-          <br />
-          <select value={formData.memory.value} onChange={handleChange} name="memory" price="price" spec="spec">
-            {renderOptions(Memorys)}
-          </select>
-        </label>
-        <br />
-        <label>
-          Motherboard: {props.build["motherboard"].name} ${props.build["motherboard"].price}
-          <br />
-          <select value={formData.motherboard.value} onChange={handleChange} name="motherboard" price="price" spec="spec">
-            {renderOptions(Motherboards)}
-          </select>
-        </label>
-        <br />
-        <label>
-          Power Supply: {props.build["powerSupply"].name} ${props.build["powerSupply"].price}
-          <br />
-          <select value={formData.powerSupply.value} onChange={handleChange} name="powerSupply" price="price" spec="spec">
-            {renderOptions(PowerSupplys)}
-          </select>
-        </label>
-        <br />
-        <label>
-          Processor: {props.build["processor"].name} ${props.build["processor"].price}
-          <br />
-          <select value={formData.processor.value} onChange={handleChange} name="processor" price="price" spec="spec">
-            {renderOptions(Processors)}
-          </select>
-        </label>
-        <br />
-        <label>
-          Storage: {props.build["storage"].name} ${props.build["storage"].price}
-          <br />
-          <select value={formData.storage.value} onChange={handleChange} name="storage" price="price" spec="spec">
-            {renderOptions(Storages)}
-          </select>
-        </label>
-        <br />
-        <input type="submit" value="Submit" />
-      </form>
+      <div id="form-page">
+        <div className="compare-container">
+          {renderCompare()}
+        </div>
+        {renderForm()}
+      </div>
     )
   }
 

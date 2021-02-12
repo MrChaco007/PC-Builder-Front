@@ -1,6 +1,7 @@
 import React from "react";
 
 const SortFilter = (props) => {
+
   //Show or hide filter boxes and animate arrows
   const [showStatus, setShowStatus] = React.useState(false);
   const [gpuArrowStatus, setGpuArrowStatus] = React.useState(true);
@@ -120,6 +121,7 @@ const SortFilter = (props) => {
   const handleLow = () => {
     if (lowCheckStatus === false) {
       setLowCheckStatus(true);
+
       console.log("lowCheckStatus".lowCheckStatus);
     } else {
       setLowCheckStatus(false);

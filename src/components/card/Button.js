@@ -6,11 +6,13 @@ const Button = ({ button, build, handleDelete, selectBuild }) => {
     // Button will receive a prop "button" which will either be "create", "edit" or "delete"
     // the switch statement determines its type and returns either a link to the correct page
     // or trigger a delete callback
+
+    const buttonStyle = { width: "80px" }
     
     switch(button) {
         case "edit":
             return (
-              <button>
+              <button style={buttonStyle}>
                 <Link
                   className="button"
                   to="/edit"
@@ -21,7 +23,7 @@ const Button = ({ button, build, handleDelete, selectBuild }) => {
               </button>
             );
         case "delete":
-            return <button className="button" onClick={()=>handleDelete(build)}>Delete</button>
+            return <button style={buttonStyle} className="button" onClick={()=>handleDelete(build)}>Delete</button>
         default:
             return (
               <button>
