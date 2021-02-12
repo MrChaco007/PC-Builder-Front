@@ -1,17 +1,24 @@
 .build-container {
+    border-bottom: 2px solid rgba(255, 255, 255, 0.25);
+    border-top: 2px solid rgba(255, 255, 255, 0.25);
     display: flex;
     flex-direction: column;
     padding: 10px;
+    margin: 10px 0;
 }
 
 .header {
     text-transform: uppercase;
     font-weight: bold;
-    font-size: 10px;
+    font-size: 16px;
+    margin: 0 0 5px 0;
 }
 
 .name {
+    font-size: 20px;
+    text-align: center;
     font-weight: bold;
+    margin: 0 0 10px 0;
 }
 
 .specs {
@@ -24,13 +31,65 @@
 .spec {
     width: 120px;
     margin: 5px auto;
+    padding: 5px;
 }
 
 .price {
-    text-align: right;
+    font-size: 16px;
+    margin: 10px 0;
+}
+
+.spec .name {
+    text-align: left;
+    border: none;
+    font-size: 14px;
+    text-transform: none;
+    color: white;
+}
+
+.price, .name {
+    text-transform: uppercase;
+    text-align: center;
+    font-weight: bold;
+    color: magenta;
 }
 
 .button {
     margin: 0 12px;
 }
 
+.buttons-container {
+    margin: 10px auto;
+}
+
+button:hover {
+    color: magenta;
+    transition: all 0.3s ease;
+    text-decoration: none;
+}
+
+button{
+  text-decoration: none;
+  color: white;
+  transition: all 0.3s ease;
+}
+
+
+a:hover {
+    color: magenta;
+    transition: all 0.3s ease;
+    text-decoration: none;
+}
+
+a{
+  text-decoration: none;
+  color: inherit;
+}
+
+@media only screen and (min-width: 425px) {
+    .build-container {
+        border: 2px solid rgba(255, 255, 255, 0.25);
+        max-width: 400px;
+        margin: 40px;
+    }
+}

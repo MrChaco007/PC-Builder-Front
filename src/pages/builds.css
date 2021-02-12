@@ -1,0 +1,20 @@
+#builds-page {
+    max-width: 1500px;
+    margin: auto;
+}
+
+.builds-container {
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    flex-wrap: wrap;
+    margin: 25px 0 0 0;
+}
+
+.builds-container .build-container {
+    margin: 20px;
+}
+
+.builds-container .build-container .spec .name {
+    color: white;
+}
