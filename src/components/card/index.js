@@ -28,16 +28,18 @@ const BuildConfigCard = ({ build, buttons, handleDelete, selectBuild }) => {
                     </li>
                 )
             }
-            return (
-                <li className="spec" key={index}>
-                    <div className="header">
-                        {spec}
-                        <div className="underline"></div>
-                    </div>
-                    <div className="name">{specObj.name}</div>
-                    <div className="_spec">{specObj.spec}</div>
-                </li>
-            )
+ return (
+   <li className="spec" key={index}>
+     <div className="header">
+       {spec}
+       <div className="underline"></div>
+     </div>
+     <div className="name">{specObj.name}</div>
+     <div className="_spec">{specObj.spec}</div>
+   </li>
+ );
+
+
         })
     }
 
@@ -63,7 +65,7 @@ const BuildConfigCard = ({ build, buttons, handleDelete, selectBuild }) => {
             <div className="build-container">
                 <div className="name">{build.name}</div>
                 <div className="specs">{renderSpecs()}</div>
-                <div className="price">Total Cost: ${build.price}</div>
+                <div className="price"><span id="price-header">Total Cost</span><div className ="underline"></div>${build.price}</div>
                 <div className="buttons-container">{renderButtons()}</div>
             </div>
         )
