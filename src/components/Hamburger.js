@@ -4,16 +4,21 @@ import './hamburger.css'
 
 const Hamburger = () => {
     const [open, setOpen] = useState(false)
+
+
+    const handleClick = () => {
+      setOpen(!open)
+    }
     const isOpen = () => {
     return (
         <>
-          <div className="hamburger open" open={open} onClick={() => setOpen(!open)}>
+          <div className="hamburger open" open={open} onClick={handleClick}>
             <div id="one"></div>
             <div id="two"></div>
             <div id="three"></div>
           </div>
           <div className="right-nav open">
-            <RightNav/>
+            <RightNav handleClick={handleClick}/>
           </div>
         </>
     )
@@ -21,13 +26,13 @@ const Hamburger = () => {
     const isClosed = () => {
         return (
         <>
-          <div className="hamburger" open={open} onClick={() => setOpen(!open)}>
+          <div className="hamburger" open={open} onClick={handleClick}>
               <div id="one"></div>
               <div id="two"></div>
               <div id="three"></div>
           </div>
           <div className="right-nav">
-             <RightNav open={open}/>
+             <RightNav handleClick={handleClick}/>
           </div>
         </>
       )
