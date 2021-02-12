@@ -8,6 +8,8 @@
 .compare-container {
     display: flex;
     flex-direction: row;
+    align-items: center;
+    justify-content: center;
 }
 
 .compare-container .build-container:first-child {
