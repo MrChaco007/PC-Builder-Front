@@ -12,6 +12,10 @@
     justify-content: center;
 }
 
+.compare-container #display .build-container:first-child {
+    display: flex;
+}
+
 .compare-container .build-container:first-child {
     display: none;
 } 
