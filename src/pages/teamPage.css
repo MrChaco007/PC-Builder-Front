@@ -1,4 +1,6 @@
-/*******TEAM PAGE*******/
+/*********************TEAM PAGE************************/
+
+/****HEAD/CONTAINER/CARDS****/
 
 .teamHead {
     text-align: center;
@@ -21,9 +23,10 @@
     margin: 0px 10px 0px 10px;
 }
 
-.hover-1-title::after {
-    transition: all 0.3s;
-    z-index: 99;
+/****CONTENT****/
+
+.hover-1-content {
+    margin-top: 10px;
 }
 
 .hover-1-title span {
@@ -59,8 +62,12 @@ button:hover {
     text-decoration: none;
 }
 
+.icon {
+    margin: 0;
+}
+
 .icon-link {
-    padding: 0px 5px 0px 5px;
+    padding: 0px 5px 10px 5px;
 }
 
 button {
@@ -84,14 +91,9 @@ a {
   color: inherit;
 }
 
-/*****ACCORDION*****/
+/********TABLET********/
 
-.alex {
-    display: flex;
-    flex: none;
-}
-
-@media (min-width: 768px) {
+@media (min-width: 468px) {
     .teamHead {
         text-align: center;
         font-size: 45px;
@@ -109,5 +111,17 @@ a {
         flex-flow: wrap;
         justify-content: space-around;
 
+    }
+}
+
+/*******Desktop*******/
+
+@media (min-width: 1024px) {
+    .teamHead {
+        font-size: 60px;
+    }
+
+    .cardsContainer {
+        margin-top: 15px;
     }
 }

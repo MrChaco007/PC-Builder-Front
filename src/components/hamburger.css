@@ -4,7 +4,7 @@ div.hamburger {
    display: flex;
    justify-content: space-around;
    flex-flow: column nowrap;
-   z-index: 50;
+   z-index: 100;
 }
 div.hamburger, #one {
         
