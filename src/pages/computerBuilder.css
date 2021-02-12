@@ -46,6 +46,7 @@ div.content {
 #more-arrows {
     width: 75px;
     height: 65px;
+    margin-top: 10px; 
 }
 #more-arrows:hover polygon {
     fill: magenta;
