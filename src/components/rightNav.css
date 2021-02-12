@@ -16,9 +16,17 @@
 
 div.right-nav.open, li {
     right: 0;
+    margin-top: 40px;
 }
 div.right-nav.open, li {
     color: white;
     text-decoration: none;
-    padding: 18px 10px;
+    padding: 10px 10px;
+ }
+
+ @media (min-width: 768px) {
+    div.right-nav.open, li {
+        /* right: 0; */
+        margin-top: 10px;
+    }
  }
