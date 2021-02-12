@@ -17,9 +17,7 @@ const Hamburger = () => {
             <div id="two"></div>
             <div id="three"></div>
           </div>
-          <div className="outside open">
-
-          </div>
+          <div className="outside open" onClick={handleClick}></div>
           <div className="right-nav open">
             <RightNav handleClick={handleClick}/>
           </div>

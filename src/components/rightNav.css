@@ -3,10 +3,8 @@
     display: flex;
     flex-flow: row nowrap;
     flex-flow: column nowrap;
-    /* background-color: #3b3b3b; */
     background: linear-gradient(to top,#000000, #434343);
-    /* transform: ${({ open }) => open ? 'translateX(0)' : 'translateX(100%)'} */
-    /* padding-top: 3.5rem; */
+
 
     width: 200px;
     height: 100%;
@@ -32,7 +30,6 @@
 div.outside.open {
     z-index: 10;
     opacity: 1;
-    /* margin-top: 40px; */
 }
 
 div.right-nav.open {
@@ -42,7 +39,6 @@ div.right-nav.open {
 div.right-nav.open, li {
     color: white;
     text-decoration: none;
-    /* padding: 10px 10px; */
  }
 
  @media (min-width: 768px) {
