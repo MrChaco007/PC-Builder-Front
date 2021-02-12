@@ -752,14 +752,13 @@ const SortFilter = (props) => {
 
     let newArr = [];
     for (let i = 0; i < props.builds.length; i++) {
-      console.log((gpuArray.includes(props.builds[i].gpu.spec)) || (gpuArray === []))
       if (
-        (gpuArray.includes(props.builds[i].gpu.spec) || gpuArray === []) &&
-        (meArray.includes(props.builds[i].memory.spec) || meArray === []) &&
+        (gpuArray.includes(props.builds[i].gpu.spec) || gpuArray.length === 0) &&
+        (meArray.includes(props.builds[i].memory.spec) || meArray.length === 0) &&
         (moArray.includes(props.builds[i].motherboard.spec) ||
-          moArray === []) &&
-        (poArray.includes(props.builds[i].powerSupply.spec) || poArray === [])&&
-        (sArray.includes(props.builds[i].storage.spec) || sArray === [])
+          moArray.length === 0) &&
+        (poArray.includes(props.builds[i].powerSupply.spec) || poArray.length === 0)&&
+        (sArray.includes(props.builds[i].storage.spec) || sArray.length === 0)
       ) {
         newArr.push(props.builds[i]);
         console.log(newArr);
