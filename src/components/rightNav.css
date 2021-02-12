@@ -3,31 +3,49 @@
     display: flex;
     flex-flow: row nowrap;
     flex-flow: column nowrap;
-    background-color: #3b3b3b;
+    background: linear-gradient(to top,#000000, #434343);
+
+
+    width: 200px;
+    height: 100%;
     position: fixed;
-    /* transform: ${({ open }) => open ? 'translateX(0)' : 'translateX(100%)'} */
     top: 0;
-    right: -300px;
-    height: 100vh;
-    width: 300px;
-    padding-top: 3.5rem;
+    right: -200px;
     transition: all 0.3s ease-in-out;
-    z-index: 100;
+    z-index: 50;
 }
 
-div.right-nav.open, li {
+.outside {
+    position: fixed;
+    top: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.8);
+    transition: all 0.3s ease-in-out;
+    opacity: 0;
     right: 0;
-    margin-top: 40px;
+    z-index: -10;
 }
+
+div.outside.open {
+    /* z-index: 100; */
+    z-index: 49;
+    opacity: 1;
+}
+
+div.right-nav.open {
+    right: 0;
+    /* z-index: 101; */
+}
+
 div.right-nav.open, li {
     color: white;
     text-decoration: none;
-    padding: 10px 10px;
  }
 
  @media (min-width: 768px) {
-    div.right-nav.open, li {
-        /* right: 0; */
-        margin-top: 10px;
-    }
+     .right-nav {
+         width: 300px;
+         right: -300px;
+     }
  }

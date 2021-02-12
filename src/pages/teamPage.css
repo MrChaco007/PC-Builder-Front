@@ -9,12 +9,13 @@
 }
 
 .team {
-    margin-top: 20px;
+    margin-top: 25px;
 }
 
 .card {
     margin: 10px;
-    background: linear-gradient(#d9a7c7, #fffcdc);   
+    background: linear-gradient(#d9a7c7, #fffcdc);  
+    z-index: 49;  
 }
 
 .card-body {
@@ -60,6 +61,7 @@ button:hover {
     color: magenta;
     transition: all 0.3s ease;
     text-decoration: none;
+    z-index: 49; 
 }
 
 .icon {

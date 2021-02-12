@@ -8,13 +8,16 @@ import './nav.css'
 
 const Nav = () => {
   return ( 
- <div className="nav">
-    <h1 id="nav-title">PC Builder</h1>
-    <div className="menu-bar">
-       <RightNav />
-    </div>
-       <Hamburger />
-    </div>
+      <div className="_nav">
+         <Link to="/"id="nav-title">
+            PC Builder
+            <div className="underline nav-underline"></div>
+         </Link>
+         <div className="menu-bar">
+            <RightNav />
+         </div>
+         <Hamburger />
+      </div>
   );
 };
 

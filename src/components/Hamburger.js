@@ -17,6 +17,7 @@ const Hamburger = () => {
             <div id="two"></div>
             <div id="three"></div>
           </div>
+          <div className="outside open" onClick={handleClick}></div>
           <div className="right-nav open">
             <RightNav handleClick={handleClick}/>
           </div>
@@ -25,18 +26,20 @@ const Hamburger = () => {
     }
     const isClosed = () => {
         return (
-        <>
-          <div className="hamburger" open={open} onClick={handleClick}>
-              <div id="one"></div>
-              <div id="two"></div>
-              <div id="three"></div>
-          </div>
-          <div className="right-nav">
-             <RightNav handleClick={handleClick}/>
-          </div>
-        </>
-      )
+          <>
+            <div className="hamburger" open={open} onClick={handleClick}>
+                <div id="one"></div>
+                <div id="two"></div>
+                <div id="three"></div>
+            </div>
+            <div className="outside"></div>
+            <div className="right-nav">
+              <RightNav handleClick={handleClick}/>
+            </div>
+          </>
+        )
     }
+    
     return (
         open ? isOpen() : isClosed()
     )
