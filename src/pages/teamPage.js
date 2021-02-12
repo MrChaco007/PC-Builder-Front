@@ -58,7 +58,7 @@ const TeamPage = () => {
                   <br />
                   <br />
                   He is motivated by his appetite to get better at what he does
-                  and to become a reliable asset for his team. My marketing
+                  and to become a reliable asset for his team. His marketing
                   experience enables him to see how even the most robust
                   back-end logic is futile without an intuitive and appealing
                   front-end design.</p>
