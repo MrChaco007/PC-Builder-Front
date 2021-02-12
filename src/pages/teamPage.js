@@ -41,9 +41,9 @@ const TeamPage = () => {
           >
             <FontAwesomeIcon className="icon" icon={faLinkedin} size="2x" />
           </a>
-          <Accordion defaultActiveKey="0" id="card1">
+          <Accordion defaultActiveKey="1">
             <Card className="alex">
-              <Accordion.Toggle className="learn" as={Button} variant="dark" eventKey="0" data-parent="card1">
+              <Accordion.Toggle className="learn" as={Button} variant="dark" eventKey="0">
                 Learn more about <span className=
                 "colorName">Alex</span>
               </Accordion.Toggle>
@@ -97,9 +97,9 @@ const TeamPage = () => {
           >
             <FontAwesomeIcon className="icon" icon={faLinkedin} size="2x" />
           </a>
-          <Accordion defaultActiveKey="1" id="card2">
+          <Accordion defaultActiveKey="1">
             <Card>
-              <Accordion.Toggle as={Button} variant="dark" eventKey="0" data-parent="card2">
+              <Accordion.Toggle as={Button} variant="dark" eventKey="0">
                 Learn more about <span className="colorName">Adrian</span>
               </Accordion.Toggle>
               <Accordion.Collapse eventKey="0">
@@ -144,7 +144,7 @@ const TeamPage = () => {
           >
             <FontAwesomeIcon className="icon" icon={faLinkedin} size="2x" />
           </a>
-          <Accordion defaultActiveKey="2">
+          <Accordion defaultActiveKey="1">
             <Card>
               <Accordion.Toggle as={Button} variant="dark" eventKey="0">
                 Learn more about <span className="colorName">Jorge</span>
@@ -191,7 +191,7 @@ const TeamPage = () => {
           >
             <FontAwesomeIcon className="icon" icon={faLinkedin} size="2x" />
           </a>
-          <Accordion defaultActiveKey="3">
+          <Accordion defaultActiveKey="1">
             <Card>
               <Accordion.Toggle as={Button} variant="dark" eventKey="0">
                 Learn more about <span className="colorName">Andrew</span>
@@ -200,10 +200,10 @@ const TeamPage = () => {
                 <Card.Body style={{ fontSize: "16px" }}>
                   <br />
                   <p className="infoPar"><span className="firstLetter">
-                  A</span>ndrew is a Software Developer who was born and raised in Los Angeles. Now residing in San Diego, he has committed 6 years to the Financial Service Industry and Food and Beverage Industry. 
+                  A</span>ndrew is a Software Developer who was born and raised in Los Angeles, now residing in San Diego. He has committed 6 years to the Financial Industry and Food/Beverage Industry. 
                   <br />
                   <br />
-                  With his newly aquired skills in HTML, CSS, JavaScript, and React, he strives to implement a soft, clean touch with great responsiveness and color pop. Simple and reliability are dynamics he enjoys, in order make a proper statement. It really is the simple things that stand out!</p>
+                  With his newly aquired skills in HTML, CSS, JavaScript, & React, he strives to implement a soft, clean touch with great responsiveness and color pop. Simple and reliability are dynamics he enjoys, in order to make a proper statement. It really is the simple things that stand out!</p>
                   <br />
                 </Card.Body>
               </Accordion.Collapse>
