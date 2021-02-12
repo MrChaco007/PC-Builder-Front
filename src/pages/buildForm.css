@@ -8,6 +8,8 @@
 .compare-container {
     display: flex;
     flex-direction: row;
+    align-items: center;
+    justify-content: center;
 }
 
 .compare-container .build-container:first-child {
@@ -21,7 +23,11 @@
 .compare-container .build-container .spec .name,
 .compare-container .build-container .spec ._spec {
     font-size: 12px;
-} */
+} 
+
+.compare-container .build-container .buttons-container {
+    display: none;
+} 
 
 .input-container {
     margin: 0 0 10px 0;
