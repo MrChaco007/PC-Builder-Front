@@ -2,7 +2,7 @@
   ._nav {
     width: 100vw;
     height: 65px;
-    padding: 20px;
+    padding: 30px 20px;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -31,7 +31,7 @@
   }
 
   .links-container li {
-    margin: 0 25px;
+    margin: 0 20px;
     z-index: 50;
   }
 
