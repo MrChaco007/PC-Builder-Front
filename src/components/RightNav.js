@@ -6,7 +6,7 @@ import { Link } from "react-router-dom"
 const RightNav = (props) => {
   
         return (     
-        <div>
+        <>
             <Link to="/">
               <li className="links" onClick={props.handleClick}>Home</li>
             </Link>
@@ -19,7 +19,7 @@ const RightNav = (props) => {
             <Link to="/team">
               <li className="links" onClick={props.handleClick}>About the team</li>
             </Link>
-        </div>
+        </>
         )
 }
 
