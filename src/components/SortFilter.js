@@ -41,9 +41,9 @@ const [twentyFourCheckStatus, setTwentyFourCheckStatus] = React.useState(false);
 const [me16CheckStatus, setMe16CheckStatus] = React.useState(false)
 const [me32CheckStatus, setMe32CheckStatus] = React.useState(false);
 const [me64CheckStatus, setMe64CheckStatus] = React.useState(false);
-const [me16CheckStatus, setMe16CheckStatus] = React.useState(false);
-const [me32CheckStatus, setMe32CheckStatus] = React.useState(false);
-const [me64CheckStatus, setMe64CheckStatus] = React.useState(false);
+// const [me16CheckStatus, setMe16CheckStatus] = React.useState(false);
+// const [me32CheckStatus, setMe32CheckStatus] = React.useState(false);
+// const [me64CheckStatus, setMe64CheckStatus] = React.useState(false);
 const [gpuArray, setGpuArray] = React.useState([])
 const [meArray, setMeArray] = React.useState([]);
 const handleFilter = (event) => { 

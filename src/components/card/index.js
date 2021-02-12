@@ -19,16 +19,23 @@ const BuildConfigCard = ({ build, buttons, handleDelete, selectBuild }) => {
             if (spec === "powerSupply") {
                 return (
                     <li className="spec" key={index}>
-                        <div className="header">Power Supply</div>
+                        <div className="header">
+                            Power Supply
+                            <div className="underline"></div>
+                        </div>
                         <div className="name">{specObj.name}</div>
+                        <div className="_spec">{specObj.spec}</div>
                     </li>
                 )
             }
             return (
                 <li className="spec" key={index}>
-                    <div className="header">{spec}</div>
+                    <div className="header">
+                        {spec}
+                        <div className="underline"></div>
+                    </div>
                     <div className="name">{specObj.name}</div>
-                    <div>{specObj.spec}</div>
+                    <div className="_spec">{specObj.spec}</div>
                 </li>
             )
         })
@@ -56,7 +63,7 @@ const BuildConfigCard = ({ build, buttons, handleDelete, selectBuild }) => {
             <div className="build-container">
                 <div className="name">{build.name}</div>
                 <div className="specs">{renderSpecs()}</div>
-                <div className="price">${build.price}</div>
+                <div className="price">Total Cost: ${build.price}</div>
                 <div className="buttons-container">{renderButtons()}</div>
             </div>
         )
