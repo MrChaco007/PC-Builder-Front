@@ -1,0 +1,24 @@
+.right-nav {
+    list-style: none;
+    display: flex;
+    flex-flow: row nowrap;
+    flex-flow: column nowrap;
+    background-color: #3b3b3b;
+    position: fixed;
+    /* transform: ${({ open }) => open ? 'translateX(0)' : 'translateX(100%)'} */
+    top: 0;
+    right: -300px;
+    height: 100vh;
+    width: 300px;
+    padding-top: 3.5rem;
+    transition: all 0.3s ease-in-out;
+}
+
+div.right-nav.open, li {
+    right: 0;
+}
+div.right-nav.open, li {
+    color: white;
+    text-decoration: none;
+    padding: 18px 10px;
+ }
