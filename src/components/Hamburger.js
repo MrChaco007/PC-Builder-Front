@@ -12,8 +12,11 @@ const Hamburger = () => {
             <div id="two"></div>
             <div id="three"></div>
           </div>
+          <div className="outside open">
+
+          </div>
           <div className="right-nav open">
-            <RightNav/>
+              <RightNav/>
           </div>
         </>
     )
@@ -26,9 +29,12 @@ const Hamburger = () => {
               <div id="two"></div>
               <div id="three"></div>
           </div>
-          <div className="right-nav">
-             <RightNav open={open}/>
+          <div className="outside">
+
           </div>
+          <div className="right-nav">
+               <RightNav open={open}/>
+            </div>
         </>
       )
     }
