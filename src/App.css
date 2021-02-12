@@ -13,6 +13,13 @@ body {
   overflow-y: auto;
 }
 
+/* h5{
+      margin-block-start: 0em !important;
+    margin-block-end: 0em !important;
+    margin-inline-start: 0px !important;
+    margin-inline-end: 0px !important;
+} */
+
 .App-logo {
   height: 40vmin;
   pointer-events: none;
@@ -103,18 +110,19 @@ display: flex;
 flex-wrap: wrap;
 justify-content:space-evenly;
 margin: 10px; 
+min-width: 250px;
 }
 
 .sort-filter-box{ 
-  border: 1px solid white; 
+  border: 1px solid white;
   border-radius: 0.25rem; 
   margin: 20px; 
 }
 
 .filter-box{
-  width: 325px;
+  min-width: 250px;
   margin: 10px; 
-  border: 1px white solid; 
+  border: 1px solid rgba(255, 255, 255, 0.25);
   border-radius: 0.25rem; 
   padding: 10px; 
   transition: all 0.3s ease;
@@ -138,21 +146,21 @@ margin: 0 auto 10px auto;
 }
 /* ARROW CREDIT: Simon Breiter */
 .arrow {
-  width: 1.8rem;
-  height: 1.8rem;
+  width: 1.5rem;
+  height: 1.5rem;
   display: inline-block;
   position: relative;
-  margin: 0 1rem;
+  margin: 10px 10px 0px 10px;
   border: 1px solid rgb(66, 66, 66); 
   border-radius: 0.25rem;
   background-color: rgb(66, 66, 66);
-  box-shadow: 3px 3px 10px grey;
+  box-shadow: 1px 1px 3px grey;
 }
 .arrow span {
-  top: 0.75rem;
+  top: 0.6rem;
   position: absolute;
-  width: 1.05rem;
-  height: 0.2rem;
+  width: .87rem;
+  height: 0.15rem;
   background-color: magenta;
   display: inline-block;
   transition: all 0.2s ease;
@@ -173,9 +181,9 @@ margin: 0 auto 10px auto;
 }
 
 .filter-header{
-width: 250px; 
- text-align:center; 
- margin: 0px 20px; 
+width: 150px; 
+text-align:center; 
+ margin: 0px auto !important; 
 }
 
 #sort-filter-component{
@@ -226,4 +234,8 @@ button:hover, input:hover {
 .filter-box article {
   padding: 5px 0px;
   border-bottom: 1px solid rgb(177, 177, 177); 
+}
+
+#last-item{
+  border-bottom: none; 
 }
