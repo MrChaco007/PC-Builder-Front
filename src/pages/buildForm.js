@@ -125,7 +125,7 @@ const BuildForm = (props) => {
           </select>
           <div className="underline"></div> 
         </div>
-        <input type="submit" value="Submit" />
+        <input id="submit" type="submit" value="Submit" />
       </form>
     )
   }
