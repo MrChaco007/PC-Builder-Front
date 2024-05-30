@@ -9,7 +9,7 @@ import TeamPage from "./pages/teamPage";
 import BuildForm from "./pages/buildForm";
 
 function App() {
-  const url = "https://pc-builder-2-c95a90314b6f.herokuapp.com/";
+  const url = "https://pc-builder-2-c95a90314b6f.herokuapp.com";
   const [builds, setBuilds] = React.useState([]);
   const build = {
     _id: "",
